@@ -1,0 +1,57 @@
+@preset-name: "Boileplate";
+@preset-icon: concrete-icon(#ee4a33, #32d6ed, #373332);
+@preset-fonts-file: "build/fonts/defaults.less";
+
+
+// -- Global color -- \\
+
+
+	@brand-primary-color : 		#ee4a33;
+	@brand-secondary-color : 	#32d6ed;
+	@brand-tertiary-color : 	#eff4f9; // A light color
+	@brand-quaternary-color : 	#373332; // A darker color
+
+	@brand-white-color: 			#ffffff;
+	@brand-black-color : 			#4b4750;
+	@brand-grey-color : 			lighten(@brand-black-color, 50%);
+	@brand-light-color : 			darken(@body-bg-color,2%);
+
+	@brand-primary-text-color :  	contrast(@brand-primary-color, @brand-black-color, @brand-white-color);
+	@brand-secondary-text-color : 	contrast(@brand-secondary-color, @brand-black-color, @brand-white-color);
+	@brand-tertiary-text-color : 	contrast(@brand-tertiary-color, @brand-black-color, @brand-white-color);
+	@brand-quaternary-text-color : 	contrast(@brand-quaternary-color, @brand-black-color, @brand-white-color);
+
+	@brand-primary-light-color : 		hsl(hue(@brand-primary-color),saturation(@brand-primary-color),95%);;
+	@brand-secondary-light-color : 		hsl(hue(@brand-secondary-color),saturation(@brand-secondary-color),95%);
+	@brand-tertiary-light-color : 		hsl(hue(@brand-tertiary-color),saturation(@brand-tertiary-color),95%);
+	@brand-quaternary-light-color : 	hsl(hue(@brand-quaternary-color),saturation(@brand-quaternary-color),95%);
+
+	@brand-success-color:         #5cb85c;
+	@brand-info-color:            #5bc0de;
+	@brand-warning-color:         #f0ad4e;
+	@brand-danger-color:          #d9534f;
+
+
+// -- Global Page -- \\
+
+	// Page
+	@body-bg-color:               #fff;
+	@body-bg-pattern-image:       "../images/pattern/noise.png";
+	@content-bg-color: 			#fff;
+ 
+// -- Sizes ! -- \\
+
+	@space-xxs : .9rem;
+	@space-xs : 1.6rem;
+	@space-s : 2.3rem;
+	@space-ms : 3.7rem;
+	@space-m : 4.2rem;
+	@space-l : 6.0rem;
+	@space-xl : 9.7rem;
+	@space-xxl :15.7rem;
+
+	@line-height-base:        2;
+	@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+
+// -- Ease -- \\
+	 @ease-speed: cubic-bezier(.89,.05,.09,.99);

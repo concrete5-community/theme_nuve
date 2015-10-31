@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<concrete5-cif version="1.0">
+    <attributekeys>
+        <attributekey handle="" name="" package="theme_boilerplate" searchable="0" indexed="0" type="text" category="collection"/>
+    </attributekeys>
+    <attributesets>
+        <attributeset handle="theme_boilerplate" name="Theme Boilerplate" package="theme_boilerplate" locked="0" category="collection">
+            <attributekey handle="theme_boilerplate"/>
+        </attributeset>
+    </attributesets>
+</concrete5-cif>
