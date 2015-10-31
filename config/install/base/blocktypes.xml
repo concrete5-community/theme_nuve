@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <concrete5-cif version="1.0">
 
-    <blocktypes>
-        <blocktype handle="mylab_typer" package="theme_nuve"/>
-    </blocktypes>
+    <!-- <blocktypes>
+         <blocktype handle="mylab_typer" package="theme_nuve"/>
+    </blocktypes> -->
 
 </concrete5-cif>

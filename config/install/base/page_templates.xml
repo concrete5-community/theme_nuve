@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <concrete5-cif version="1.0">
-    <pagetemplates>
-        <pagetemplate icon="left_sidebar.png" name="Left Sidebar" handle="left_sidebar" package="theme_nuve" internal=""/>
+    <!-- <pagetemplates>
         <pagetemplate icon="right_sidebar.png" name="Right Sidebar" handle="right_sidebar" package="theme_nuve" internal=""/>
-    </pagetemplates>
+     </pagetemplates> -->
 </concrete5-cif>

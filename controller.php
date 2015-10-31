@@ -18,7 +18,7 @@ class Controller extends \Concrete\Core\Package\Package {
 	protected $pkg;
 
 	public function getPackageDescription() {
-		return t("A perfectly crafted template that use all the power of concret5.7");
+		return t("A One page theme with sections navigation");
 	}
 
 	public function getPackageName() {
@@ -26,12 +26,12 @@ class Controller extends \Concrete\Core\Package\Package {
 	}
  	public function on_start() {
  		$al = AssetList::getInstance();
- 		$al->register( 'javascript', 'main', 'js/main.js',null, $this );
-		$al->register( 'javascript', 'modernizr', 'js/modernizr.js',null, $this );
-		$al->register( 'javascript', 'velocity', 'js/velocity.min.js',null, $this );
-		$al->register( 'javascript', 'velocity.ui', 'js/velocity.ui.min.js',null, $this );
- 		$al->register( 'css', 'reset', 'themes/nuve/css/static/reset.css', null, $this );
-		$al->register( 'css', 'style', 'themes/nuve/css/static/style.css', null, $this );
+ 		$al->register( 'javascript', 'main', 'js/main.js',array(), $this );
+		$al->register( 'javascript', 'modernizr', 'js/modernizr.js',array(), $this );
+		$al->register( 'javascript', 'velocity', 'js/velocity.min.js',array(), $this );
+		$al->register( 'javascript', 'velocity.ui', 'js/velocity.ui.min.js',array(), $this );
+ 		$al->register( 'css', 'reset', 'themes/nuve/css/static/reset.css', array(), $this );
+		$al->register( 'css', 'style', 'themes/nuve/css/static/style.css', array(), $this );
 
  	}
 	public function install() {
