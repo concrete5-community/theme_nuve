@@ -7,14 +7,17 @@ if (is_object($number_of_areas)) $number_of_areas = $number_of_areas->current()-
 $number_of_areas = $number_of_areas === false ? 1 : $number_of_areas;
 
 if ($number_of_areas > 0 ) {
-    for ($i=0; $i <= $number_of_areas; $i++) { 
+    for ($i=0; $i <= $number_of_areas; $i++) {
         // Ce qui va suivre le nom de l'area (area, area-1, area-2, ...)
         $id = $i > 0 ?  $area_name . ' - ' . $i : $area_name;
-        echo "<div class=\"$id\">";
+        $visible = $i === 0 ? 'visible' : '';
+        echo "<section class=\"cd-sectio $id $visible\">";
+        echo "<div class=\"cd-section-inner\">";
 	    $area = new Area($id);
 	    $area->enableGridContainer();
 	    $area->display($c);
-	    echo "</div>";
+      echo "</div>";
+	    echo "</section>";
     }
 }
 

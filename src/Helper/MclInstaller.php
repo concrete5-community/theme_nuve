@@ -1,5 +1,5 @@
 <?php
-namespace Concrete\Package\ThemeBoileplate\Src\Helper;
+namespace Concrete\Package\ThemeNuve\Src\Helper;
 defined('C5_EXECUTE') or die(_("Access Denied."));
 
 use Page;

@@ -1,11 +1,22 @@
 <?xml version="1.0"?>
 <concrete5-cif version="1.0">
     <attributekeys>
-        <attributekey handle="" name="" package="theme_boilerplate" searchable="0" indexed="0" type="text" category="collection"/>
-    </attributekeys>
+      <attributekey handle="number_of_main_areas" name="Number of main areas" package="theme_nuve" searchable="0" indexed="1"
+                    type="select" category="collection">
+          <type allow-multiple-values="0" display-order="display_asc" allow-other-values="0">
+              <options>
+                  <option value="2" is-end-user-added="0"/>
+                  <option value="3" is-end-user-added="0"/>
+                  <option value="4" is-end-user-added="0"/>
+                  <option value="5" is-end-user-added="0"/>
+                  <option value="6" is-end-user-added="0"/>
+                  <option value="7" is-end-user-added="0"/>
+              </options>
+          </type>
+      </attributekey>    </attributekeys>
     <attributesets>
-        <attributeset handle="theme_boilerplate" name="Theme Boilerplate" package="theme_boilerplate" locked="0" category="collection">
-            <attributekey handle="theme_boilerplate"/>
+        <attributeset handle="theme_nuve" name="Theme Nuve" package="theme_nuve" locked="0" category="collection">
+            <attributekey handle="number_of_main_areas"/>
         </attributeset>
     </attributesets>
 </concrete5-cif>
