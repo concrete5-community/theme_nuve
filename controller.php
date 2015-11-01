@@ -31,7 +31,7 @@ class Controller extends \Concrete\Core\Package\Package {
 		$al->register( 'javascript', 'velocity', 'js/velocity.min.js',array(), $this );
 		$al->register( 'javascript', 'velocity.ui', 'js/velocity.ui.min.js',array(), $this );
  		$al->register( 'css', 'reset', 'themes/nuve/css/static/reset.css', array(), $this );
-		$al->register( 'css', 'style', 'themes/nuve/css/static/style.css', array(), $this );
+		$al->register( 'css', 'nuve-style', 'themes/nuve/css/static/style.css', array(), $this );
 
  	}
 	public function install() {

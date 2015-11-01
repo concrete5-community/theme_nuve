@@ -15,7 +15,7 @@ class PageTheme extends \Concrete\Core\Page\Theme\Theme  {
 
         $this->requireAsset('css', 'font-awesome');
 				$this->requireAsset('css', 'reset');
-				$this->requireAsset('css', 'style');
+				$this->requireAsset('css', 'nuve-style');
 	}
 
     protected $pThemeGridFrameworkHandle = 'bootstrap3';
