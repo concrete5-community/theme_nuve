@@ -2,6 +2,7 @@
 defined('C5_EXECUTE') or die("Access Denied.");
 
 	$c = Page::getCurrentPage();
+	// var_dump( Request::getInstance());
 	$pageTheme = $c->getCollectionThemeObject();
 	$t =  $c->getCollectionThemeObject();
 	$rssUrl = $showRss ? $controller->getRssUrl($b) : '';
@@ -38,52 +39,62 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
 		if ($page->getPageTemplateHandle() == 'popup_content' && in_array('popup-link',$styleObject->classesArray)):
 			$url = "#portfolio-popup-{$page->getCollectionID()}";
-			$v = $page->getController()->getViewObject();
+			$view = $page->getController()->getViewObject();
 			$page->isPopup = true;
 		endif;
 
 		$title_text =  $th->entities($page->getCollectionName());
-		$title = $useButtonForLink ? $title_text : "<a href=\"$url\" target=\"$target\">$title_text</a>" ;
-    $date = $dh->formatDate($page->getCollectionDatePublic());
+		$title = $useButtonForLink ? "<a href=\"$url\" target=\"$target\">$title_text</a>" : $title_text;
 		$tags = isset($tagsObject->pageTags[$page->getCollectionID()]) ? implode(' ',$tagsObject->pageTags[$page->getCollectionID()]) : '';
+
+    $date = date('M / d / Y',strtotime($page->getCollectionDatePublic()));
+
+		$target = ($page->getCollectionPointerExternalLink() != '' && $page->openCollectionPointerExternalLinkInNewWindow()) ? '_blank' : $page->getAttribute('nav_target');
+		$target = empty($target) ? '_self' : $target;
+    $original_author = Page::getByID($page->getCollectionID(), 1)->getVersionObject()->getVersionAuthorUserName();
+
 		if ($includeDescription):
 			$description = $page->getCollectionDescription();
 			$description = $controller->truncateSummaries ? $th->wordSafeShortText($description, $controller->truncateChars) : $description;
 			$description = $th->entities($description);
 		endif;
-		$topics = $page->getAttribute($topicAttributeKeyHandle);
-		$options = $page->getAttribute($tagAttributeHandle);
-		$options = is_object($options)  ? $options->getOptions() : array();
-
 		if ($displayThumbnail) :
-		  $img_att = $page->getAttribute('thumbnail');
-		  if($type != NULL && is_object($img_att)) :
-		      $thumbnailUrl = $img_att->getThumbnailURL($type->getBaseVersion());
-		  else:
-		  	$thumbnailUrl = false;
-		  endif;
-		endif;
+      $img_att = $page->getAttribute('thumbnail');
+      if (is_object($img_att)) :
+      	$img = Core::make('html/image', array($img_att, true));
+      	$imageTag = $img->getTag();
+      endif;
+    endif;
+
 
 ?>
-		<div class="<?php  echo $pair ?> <?php echo $column_class . intval(12 / $styleObject->columns)?> item masonry-item <?php echo $tags ?>">
-			<div class="inner">
-				<?php if (!$useButtonForLink): ?><a href="<?php echo $url ?>" target="<?php echo $target ?>" class="open-popup-link"><?php endif ?>
-					<?php  if ($thumbnailUrl) : ?>
-					<img src="<?php echo $thumbnailUrl ?>" alt="<?php echo $title_text ?>" />
-					<?php  endif ?>
-					<div class="info">
-						<?php  if ($includeName): ?><h4><?php  echo $title ?></h4><?php  endif ?>
-						<?php  if ($includeDescription): ?><p><?php  echo $description ?></p><?php  endif ?>
-						<?php  if (is_array($topics)): ?><p class="topics"><i><small><?php  foreach ($topics as $key => $topic) : ?><?php  echo $topic->getTreeNodeDisplayName() ?><?php  endforeach ?></small></i></p><?php  endif ?>
-						<?php  if ($includeDate) : ?><small><?php  echo $date ?></small><?php  endif ?>
-							<?php if ($useButtonForLink): ?><a href="<?php echo $url?>" class="button-primary button-flat button-tiny"><?php echo $buttonLinkText?></a><?php endif ?>
-					</div>
-				</a>
-			</div>
-			<?php if ($page->isPopup): ?>
-			<div class='white-popup mfp-hide large-popup' id="portfolio-popup-<?php echo $page->getCollectionID()?>"><?php echo $v->render("popup_content");?></div>
-			<?php endif ?>
+<div class="<?php echo $column_class . intval(12 / $styleObject->columns)?> item masonry-item <?php echo $tags ?>">
+	<?php if (!$useButtonForLink): ?><a href="<?php echo $url ?>" target="<?php echo $target ?>" class="open-popup-link"><?php endif ?>
+	<?php if ($imageTag) : echo $imageTag;  endif ?>
+	<?php if ($includeEntryText): ?>
+	<div class="info">
+		<div class="vertical-align">
+			<?php if ($includeDate): ?>
+				<div class="meta">
+					<small><i class="fa fa-calendar-o"></i> <?php echo $date?></small>
+					<?php if($o->carousel_meta) : ?><small> <i class="fa fa-user"></i> <?php echo $original_author ?></small><?php endif ?>
+				</div>
+			<?php endif; ?>
+			<?php if ($includeName): ?><h4><?php echo $title ?></h4><?php endif ?>
+			<?php if ($includeDescription): ?><p><?php  echo $description ?></p><?php endif ?>
+			<?php if ($useButtonForLink): ?><a href="<?php echo $url?>" class="button-primary button-flat button-tiny"><?php echo $buttonLinkText?></a><?php endif ?>
 		</div>
+	</div>
+	<?php endif ?>
+	<?php if (!$useButtonForLink): ?></a><?php endif ?>
+	<?php if ($page->isPopup): ?>
+	<div class='white-popup mfp-hide large-popup' id="portfolio-popup-<?php echo $page->getCollectionID()?>"><?php
+	Request::setCurrentPage($page);
+	echo $view->render("popup_content");
+	Request::setCurrentPage($c);
+	?></div>
+	<?php endif ?>
+	</div>
 	<?php  endforeach; ?>
 
     <?php  if (count($pages) == 0): ?>

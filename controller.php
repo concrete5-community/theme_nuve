@@ -6,6 +6,7 @@ use Concrete\Core\Asset\Asset;
 use Concrete\Core\Asset\AssetList;
 use \Concrete\Core\Backup\ContentImporter as ContentImporter;
 use Concrete\Package\ThemeNuve\Src\Helper\RbInstaller;
+use PageType;
 
 defined('C5_EXECUTE') or die('Access Denied.');
 
@@ -14,7 +15,7 @@ class Controller extends \Concrete\Core\Package\Package {
 
 	protected $pkgHandle = 'theme_nuve';
 	protected $appVersionRequired = '5.7.5';
-	protected $pkgVersion = '0.1.5';
+	protected $pkgVersion = '0.1.7';
 	protected $pkg;
 
 	public function getPackageDescription() {
@@ -61,6 +62,8 @@ class Controller extends \Concrete\Core\Package\Package {
 		$ci->importContentFile($this->getPackagePath() . '/config/install/base/attributes.xml');
 		$ci->importContentFile($this->getPackagePath() . '/config/install/base/page_templates.xml');
 		$ci->importContentFile($this->getPackagePath() . '/config/install/base/blocktypes.xml');
+		if (!is_object(PageType::getByHandle('blog_entry')))
+			$ci->importContentFile($this->getPackagePath() . '/config/install/base/page_type_blog.xml');
 
 
 	}

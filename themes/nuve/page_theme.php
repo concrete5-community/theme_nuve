@@ -21,8 +21,9 @@ class PageTheme extends \Concrete\Core\Page\Theme\Theme  {
 				$this->requireAsset('javascript', 'main');
 				$this->requireAsset('javascript', 'modernizr');
 				$this->requireAsset('javascript', 'isotope');
-        $this->requireAsset('javascript', 'imageloaded');				
+        $this->requireAsset('javascript', 'imageloaded');
 				$this->requireAsset('javascript', 'element-masonry');
+				$this->requireAsset('javascript', 'nuve');
 
         $this->requireAsset('css', 'font-awesome');
 				$this->requireAsset('css', 'reset');

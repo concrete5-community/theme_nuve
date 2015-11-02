@@ -1,5 +1,5 @@
 body {
-
+  color:	@body-text-color;
 }
 
 .page-list-masonry {
@@ -22,6 +22,9 @@ body {
   .vertical-align {
     left:@space-s;
     right: @space-s;
+  }
+  .open-popup-link {
+    display: block;
   }
 }
 ul.filter-set {
@@ -72,4 +75,53 @@ ul.filter-set {
       margin-left: -@space-s/2;
     }
     }
+}
+
+/* -- Popup-me -- */
+
+@max-popup-width: 500px;
+@max-large-popup-width: 800px;
+
+.mfp-effect.mfp-wrap .mfp-content {
+  .transition(.5s);
+}
+.white-popup {
+  position: relative;
+  background: @white-color;
+  padding: @space-s;
+  width:auto;
+  max-width: @max-popup-width;
+  margin: 20px auto;
+  &.large-popup {
+    max-width: @max-large-popup-width !important;
+    padding: @space-m;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+/* -- Popup -- */
+
+.mfp-effect.mfp-wrap .mfp-content {
+	opacity: 0;
+transform: translateY(-20px) perspective( 2000px ) rotateX( 10deg );}
+.mfp-effect.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1; transform: translateY(0) perspective( 600px ) rotateX( 0 );}
+.mfp-effect.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0; transform: translateY(-20px) perspective( 2000px ) rotateX( 10deg );}
+
+/* -- Form in popup -- */
+
+.white-popup div.ccm-block-type-form div.form-group label.control-label {
+	font-weight: normal;
+}
+.white-popup span.text-muted.small {
+	font-size: 13px;
+	// color: @primary-color;
+}
+
+/* -- Button for popup -- */
+
+a.mpf-inline.open-popup-link {
+	margin-bottom: @space-s
 }

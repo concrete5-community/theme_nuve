@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<concrete5-cif version="1.0">
+  <pagetypes>
+    <pagetype name="Blog Entry" handle="blog_entry" package="" launch-in-composer="1" is-frequently-added="1">
+      <pagetemplates type="custom" default="popup_content">
+        <pagetemplate handle="popup_content"/>
+      </pagetemplates>
+      <target handle="all" package=""/>
+      <composer>
+        <formlayout>
+          <set name="Basics" description="">
+            <control custom-template="" required="1" custom-label="" description="" type="core_page_property" handle="name"/>
+            <control custom-template="" custom-label="" description="" type="core_page_property" handle="publish_target"/>
+            <control custom-template="" custom-label="" description="" type="core_page_property" handle="description"/>
+            <control custom-template="" custom-label="" description="" type="collection_attribute" handle="tags"/>
+            <control custom-template="" custom-label="" description="" type="collection_attribute" handle="thumbnail"/>
+          </set>
+          <set name="Content" description="">
+            <control custom-template="" custom-label="" description="" output-control-id="8KJMuI7O" type="block" handle="content"/>
+            <control custom-template="" custom-label="" description="" output-control-id="8KJMuI8O" type="block" handle="image"/>
+          </set>
+        </formlayout>
+        <output>
+          <pagetemplate handle="popup_content">
+            <page name="" path="" filename="" pagetype="blog_entry" template="popup_content" user="admin" description="" package="">
+              <area name="Popup">
+                <blocks>
+                  <block type="page_attribute_display" name="">
+                    <data table="btPageAttributeDisplay">
+                      <record>
+                        <attributeHandle><![CDATA[rpv_pageName]]></attributeHandle>
+                        <attributeTitleText><![CDATA[]]></attributeTitleText>
+                        <displayTag><![CDATA[h3]]></displayTag>
+                        <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                        <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                        <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
+                      </record>
+                    </data>
+                  </block>
+                  <block type="core_area_layout" name="" custom-template="two_nogap.php">
+                    <style>
+                      <backgroundImage>{ccm:export:file:1366-500.png}</backgroundImage>
+                      <backgroundRepeat>no-repeat</backgroundRepeat>
+                      <customClass>left-primary</customClass>
+                    </style>
+                    <arealayout type="theme-grid" columns="12">
+                      <columns>
+                        <column span="8" offset="0">
+                          <block type="page_attribute_display" name="">
+                            <data table="btPageAttributeDisplay">
+                              <record>
+                                <attributeHandle><![CDATA[rpv_pageDescription]]></attributeHandle>
+                                <attributeTitleText><![CDATA[]]></attributeTitleText>
+                                <displayTag><![CDATA[p]]></displayTag>
+                                <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                                <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                                <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
+                              </record>
+                            </data>
+                          </block>
+                        </column>
+                        <column span="4" offset="0">
+                          <block type="tags" name="">
+                            <data table="btTags">
+                              <record>
+                                <title><![CDATA[]]></title>
+                                <targetCID>{ccm:export:page:/home}</targetCID>
+                                <displayMode><![CDATA[page]]></displayMode>
+                                <cloudCount><![CDATA[0]]></cloudCount>
+                              </record>
+                            </data>
+                          </block>
+                        </column>
+                      </columns>
+                    </arealayout>
+                  </block>
+                  <block type="horizontal_rule" name="">
+                    <style>
+                      <backgroundRepeat>no-repeat</backgroundRepeat>
+                      <customClass>space-s</customClass>
+                    </style>
+                  </block>
+                  <block type="core_page_type_composer_control_output" name="" mc-block-id="aD3oPTve">
+                    <control output-control-id="8KJMuI8O"/>
+                  </block>
+                  <block type="core_page_type_composer_control_output" name="" mc-block-id="aD3oPTvi">
+                    <control output-control-id="8KJMuI7O"/>
+                  </block>
+                </blocks>
+              </area>
+            </page>
+          </pagetemplate>
+        </output>
+      </composer>
+    </pagetype>
+  </pagetypes>
+</concrete5-cif>

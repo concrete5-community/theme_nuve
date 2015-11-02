@@ -2,6 +2,8 @@
 defined('C5_EXECUTE') or die("Access Denied.");
 if (!$c->isPopup) :
 	$this->inc('elements/head.php',array());
+	else :
+		// Request::setCurrentPage($c);
 endif;
 ?>
 
@@ -10,7 +12,10 @@ endif;
 	$a = new Area('Main');
 	if (!$c->isPopup) $a->enableGridContainer();
 	$a->display($c);
-	 ?>
+	$a = new Area('Popup');
+	if (!$c->isPopup) $a->enableGridContainer();
+	$a->display($c);
+		 ?>
 
 </main>
 <?php if (!$c->isPopup)	: $this->inc('elements/footer.php'); ?>
