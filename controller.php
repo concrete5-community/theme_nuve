@@ -14,7 +14,7 @@ class Controller extends \Concrete\Core\Package\Package {
 
 	protected $pkgHandle = 'theme_nuve';
 	protected $appVersionRequired = '5.7.5';
-	protected $pkgVersion = '0.1.1';
+	protected $pkgVersion = '0.1.5';
 	protected $pkg;
 
 	public function getPackageDescription() {
@@ -30,6 +30,11 @@ class Controller extends \Concrete\Core\Package\Package {
 		$al->register( 'javascript', 'modernizr', 'js/modernizr.js',array(), $this );
 		$al->register( 'javascript', 'velocity', 'js/velocity.min.js',array(), $this );
 		$al->register( 'javascript', 'velocity.ui', 'js/velocity.ui.min.js',array(), $this );
+		$al->register( 'javascript', 'imageloaded', 'js/imageloaded.js', array('version' => '3.1.8'), $this );
+		$al->register( 'javascript', 'isotope', 'js/isotope.pkgd.min.js', array('version' => '2.1.1'), $this );
+		$al->register( 'javascript', 'element-masonry', 'js/element-masonry.js', array('version' => '1'), $this );
+		$al->register( 'javascript', 'nuve', 'js/nuve.js',array(), $this );
+
  		$al->register( 'css', 'reset', 'themes/nuve/css/static/reset.css', array(), $this );
 		$al->register( 'css', 'nuve-style', 'themes/nuve/css/static/style.css', array(), $this );
 		$al->register( 'css', 'bootstrap-custom', 'themes/nuve/css/static/bootstrap.custom.min.css', array(), $this );
@@ -53,9 +58,9 @@ class Controller extends \Concrete\Core\Package\Package {
 
 		$ci = new RbInstaller($this->pkg);
 		$ci->importContentFile($this->getPackagePath() . '/config/install/base/themes.xml');
+		$ci->importContentFile($this->getPackagePath() . '/config/install/base/attributes.xml');
 		$ci->importContentFile($this->getPackagePath() . '/config/install/base/page_templates.xml');
 		$ci->importContentFile($this->getPackagePath() . '/config/install/base/blocktypes.xml');
-		$ci->importContentFile($this->getPackagePath() . '/config/install/base/attributes.xml');
 
 
 	}

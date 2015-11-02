@@ -1,10 +1,20 @@
-
+* {
+  backface-visibility: hidden;
+  // transform: translateZ(0);
+  filter: scale(0);
+  -webkit-transform-origin: 50%  51%;
+}
 *:before,
 *:after {
   .box-sizing(border-box);
 }
 
-
+.ccm-page {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
 
 /* --- container --- */
 
@@ -59,8 +69,18 @@
   width: 100%;
   top: 50% !important;
   .transform(translateY(-50%));
-}
+  @media (max-width: 1050px) {
+    position:relative;
+    top:0 !important;
+    .transform(translateY(0));
+  }
 
+}
+.hlist {
+  li {
+    display: inline-block;
+  }
+}
 
 .size(@width; @height) {
   width: @width;

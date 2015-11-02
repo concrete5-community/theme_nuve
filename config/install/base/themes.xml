@@ -3,4 +3,10 @@
     <themes>
         <theme handle="nuve" package="theme_nuve" activated="1"/>
     </themes>
+    <thumbnailtypes>
+    	<thumbnailtype name="Tiny Image" handle="tiny" width="390"/>
+        <thumbnailtype name="Small Image" handle="small" width="740"/>
+        <thumbnailtype name="Medium Image" handle="medium" width="940"/>
+        <thumbnailtype name="Large Image" handle="large" width="1140"/>
+    </thumbnailtypes>    
 </concrete5-cif>

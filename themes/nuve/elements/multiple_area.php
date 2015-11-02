@@ -17,7 +17,8 @@ if ($number_of_areas > 0 ) {
         $styleSet = $pageTheme->getAreaStyles($area,$c);
 
         echo "<section class=\"cd-section $id $visible\">";
-        echo "<div class=\"cd-section-inner\" style=\"$styleSet\">";
+        echo "<div class=\"cd-section-inner\">";
+        echo "<div class=\"cd-section-style\" style=\"$styleSet\">";
         echo "<div class=\"vertical-align\">";
 	    $area->enableGridContainer();
 	    $area->display($c);

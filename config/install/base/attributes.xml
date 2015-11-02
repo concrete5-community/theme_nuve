@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <concrete5-cif version="1.0">
     <attributekeys>
+      <attributekey handle="thumbnail" name="Thumbnail" package="theme_nuve" searchable="1" indexed="1" type="image_file" category="collection"/>      
       <attributekey handle="number_of_main_areas" name="Number of main areas" package="theme_nuve" searchable="0" indexed="1"
                     type="select" category="collection">
           <type allow-multiple-values="0" display-order="display_asc" allow-other-values="0">
