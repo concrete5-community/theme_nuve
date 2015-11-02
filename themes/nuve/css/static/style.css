@@ -43,6 +43,12 @@ Main Components
   height: 100vh;
 }
 
+.cd-section > div {
+  height: 100vh;
+  /*background: none !important;*/
+  background-size: cover;
+}
+
 @media only screen and (min-width: 1050px) {
 
   [data-hijacking="on"] .cd-section {
@@ -132,7 +138,7 @@ Main Components
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: url(../img/cd-icon-arrow.svg) no-repeat center center;
+  background: url(../../images/cd-icon-arrow.svg) no-repeat center center;
 }
 .cd-vertical-nav a.cd-prev {
   -webkit-transform: rotate(180deg);

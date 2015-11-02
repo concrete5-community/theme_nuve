@@ -14,7 +14,7 @@ class Controller extends \Concrete\Core\Package\Package {
 
 	protected $pkgHandle = 'theme_nuve';
 	protected $appVersionRequired = '5.7.5';
-	protected $pkgVersion = '0.1';
+	protected $pkgVersion = '0.1.1';
 	protected $pkg;
 
 	public function getPackageDescription() {
@@ -32,6 +32,7 @@ class Controller extends \Concrete\Core\Package\Package {
 		$al->register( 'javascript', 'velocity.ui', 'js/velocity.ui.min.js',array(), $this );
  		$al->register( 'css', 'reset', 'themes/nuve/css/static/reset.css', array(), $this );
 		$al->register( 'css', 'nuve-style', 'themes/nuve/css/static/style.css', array(), $this );
+		$al->register( 'css', 'bootstrap-custom', 'themes/nuve/css/static/bootstrap.custom.min.css', array(), $this );
 
  	}
 	public function install() {
