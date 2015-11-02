@@ -83,6 +83,12 @@
                   <block type="core_page_type_composer_control_output" name="" mc-block-id="aD3oPTve">
                     <control output-control-id="8KJMuI8O"/>
                   </block>
+                  <block type="horizontal_rule" name="">
+                    <style>
+                      <backgroundRepeat>no-repeat</backgroundRepeat>
+                      <customClass>space-s</customClass>
+                    </style>
+                  </block>
                   <block type="core_page_type_composer_control_output" name="" mc-block-id="aD3oPTvi">
                     <control output-control-id="8KJMuI7O"/>
                   </block>

@@ -22,9 +22,15 @@ body {
   .vertical-align {
     left:@space-s;
     right: @space-s;
+    width: auto;
   }
   .open-popup-link {
     display: block;
+  }
+  picture {
+    // Regle un petit souci de depassement du dessous.
+    display: block;
+    overflow: hidden;
   }
 }
 ul.filter-set {
