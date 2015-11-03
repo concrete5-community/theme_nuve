@@ -65,15 +65,23 @@
 // -- VErtical align -- \\
 
 .vertical-align {
-  position:absolute;
+  display: table;
   width: 100%;
-  top: 50% !important;
-  .transform(translateY(-50%));
-  @media (max-width: 1050px) {
-    position:relative;
-    top:0 !important;
-    .transform(translateY(0));
+  height: 100%;
+  & > div {
+    display: table-cell;
+    vertical-align: middle;
+
   }
+  // position:absolute;
+  // width: 100%;
+  // top: 50% !important;
+  // .transform(translateY(-50%));
+  // @media (max-width: 1050px) {
+  //   position:relative;
+  //   top:0 !important;
+  //   .transform(translateY(0));
+  // }
 
 }
 .hlist {

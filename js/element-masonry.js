@@ -23,6 +23,7 @@ $(document).ready(function(){
       $container.imagesLoaded(function(){
         $isotope = $container.isotope({
           masonry: masonryOptions,
+          resizable: false,
     			itemSelector: '.masonry-item'
     		});
       });
@@ -32,7 +33,7 @@ $(document).ready(function(){
           a.parent().parent().find('.' + activeButtonClass).removeClass(activeButtonClass);
           a.addClass(activeButtonClass);
           var filterValue = a.attr('data-filter');
-          $container.isotope({ filter: filterValue });
+          $container.isotope({ filter: filterValue, resizable: false });
       });
     });
 
@@ -43,6 +44,7 @@ $(document).ready(function(){
         // return;
         var qsRegex = new RegExp(input.val(), 'gi');
         gallery.isotope({
+          resizable: false,
             filter: function () {
                 return qsRegex ? $(this).text().match(qsRegex) : true;
             }

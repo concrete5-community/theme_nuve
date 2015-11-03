@@ -40,7 +40,7 @@ Main Components
 }
 
 .cd-section {
-  /*height: 100vh;*/
+  height: 100vh;
 }
 
 .cd-section > div {
@@ -49,7 +49,12 @@ Main Components
 }
 body.edit-mode .cd-section > div {
   opacity: 1;
-  position: static;
+  position: static !important;
+  -webkit-transform:none !important;
+  -moz-transform:none !important;
+  -ms-transform:none !important;
+  -o-transform:none !important;
+  transform:none !important;
 }
 .cd-section .cd-section-style {
   height: 100vh;
@@ -63,11 +68,11 @@ body.edit-mode .cd-section > div {
   }
 }
 
-@media (max-width: 1050px) {
+/*@media (max-width: 1050px) {
   position:relative;
   top:0 !important;
   .transform(translateY(0));
-}
+}*/
 
 @media only screen and (min-width: 1050px) {
 

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <concrete5-cif version="1.0">
   <pagetypes>
-    <pagetype name="Blog Entry" handle="blog_entry" package="" launch-in-composer="1" is-frequently-added="1">
+    <pagetype name="A new Work" handle="work" package="" launch-in-composer="1" is-frequently-added="1">
       <pagetemplates type="custom" default="popup_content">
         <pagetemplate handle="popup_content"/>
       </pagetemplates>
@@ -21,29 +21,21 @@
         </formlayout>
         <output>
           <pagetemplate handle="popup_content">
-            <page name="" path="" filename="" pagetype="blog_entry" template="popup_content" user="admin" description="" package="">
+            <page name="" path="" filename="" pagetype="work" template="popup_content" user="admin" description="" package="">
               <area name="Popup">
-                  <blocks>
-                    <block type="page_title" name="" custom-template="byline.php">
-                        <data table="btPageTitle">
-                            <record>
-                                <useCustomTitle><![CDATA[0]]></useCustomTitle>
-                                <titleText><![CDATA[[Page Title]]]></titleText>
-                            </record>
-                        </data>
-                    </block>
-                    <block type="tags" name="">
-                      <data table="btTags">
-                        <record>
-                          <title><![CDATA[]]></title>
-                          <targetCID>{ccm:export:page:/home}</targetCID>
-                          <displayMode><![CDATA[page]]></displayMode>
-                          <cloudCount><![CDATA[0]]></cloudCount>
-                        </record>
-                      </data>
-                    </block>
-                    <block type="horizontal_rule" name="">
-                    </block>
+                <blocks>
+                  <block type="page_attribute_display" name="">
+                    <data table="btPageAttributeDisplay">
+                      <record>
+                        <attributeHandle><![CDATA[rpv_pageName]]></attributeHandle>
+                        <attributeTitleText><![CDATA[]]></attributeTitleText>
+                        <displayTag><![CDATA[h3]]></displayTag>
+                        <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                        <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                        <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
+                      </record>
+                    </data>
+                  </block>
                   <block type="core_area_layout" name="" custom-template="two_nogap.php">
                     <style>
                       <backgroundImage>{ccm:export:file:1366-500.png}</backgroundImage>
@@ -52,7 +44,7 @@
                     </style>
                     <arealayout type="theme-grid" columns="12">
                       <columns>
-                        <column span="6" offset="0">
+                        <column span="8" offset="0">
                           <block type="page_attribute_display" name="">
                             <data table="btPageAttributeDisplay">
                               <record>
@@ -66,22 +58,38 @@
                             </data>
                           </block>
                         </column>
-                        <column span="5" offset="1">
-                          <block type="page_attribute_display" name="">
-                            <data table="btPageAttributeDisplay">
+                        <column span="4" offset="0">
+                          <block type="tags" name="">
+                            <data table="btTags">
                               <record>
-                                <attributeHandle><![CDATA[thumbnail]]></attributeHandle>
-                                <attributeTitleText><![CDATA[]]></attributeTitleText>
-                                <displayTag><![CDATA[p]]></displayTag>
-                                <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
-                                <thumbnailHeight><![CDATA[400]]></thumbnailHeight>
-                                <thumbnailWidth><![CDATA[400]]></thumbnailWidth>
+                                <title><![CDATA[]]></title>
+                                <targetCID>{ccm:export:page:/home}</targetCID>
+                                <displayMode><![CDATA[page]]></displayMode>
+                                <cloudCount><![CDATA[0]]></cloudCount>
                               </record>
                             </data>
                           </block>
                         </column>
                       </columns>
                     </arealayout>
+                  </block>
+                  <block type="horizontal_rule" name="">
+                    <style>
+                      <backgroundRepeat>no-repeat</backgroundRepeat>
+                      <customClass>space-s</customClass>
+                    </style>
+                  </block>
+                  <block type="page_attribute_display" name="">
+                    <data table="btPageAttributeDisplay">
+                      <record>
+                        <attributeHandle><![CDATA[thumbnail]]></attributeHandle>
+                        <attributeTitleText><![CDATA[]]></attributeTitleText>
+                        <displayTag><![CDATA[p]]></displayTag>
+                        <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                        <thumbnailHeight><![CDATA[900]]></thumbnailHeight>
+                        <thumbnailWidth><![CDATA[900]]></thumbnailWidth>
+                      </record>
+                    </data>
                   </block>
                   <block type="horizontal_rule" name="">
                     <style>

@@ -6,30 +6,30 @@
 // -- Global color -- \\
 
 
-	@brand-primary-color : 		#ee4a33;
-	@brand-secondary-color : 	#32d6ed;
-	@brand-tertiary-color : 	#eff4f9; // A light color
-	@brand-quaternary-color : 	#373332; // A darker color
+@primary-color : 		#f24b4b;
+@secondary-color : 	#6bd6f1;
+@tertiary-color : 	#F7F2EF; // A light color // edf4f4
+@quaternary-color : 	#4F5659; // A darker color
 
-	@brand-white-color: 			#ffffff;
-	@brand-black-color : 			#4b4750;
-	@brand-grey-color : 			lighten(@brand-black-color, 50%);
-	@brand-light-color : 			darken(@body-bg-color,2%);
+@white-color: 			#ffffff;
+@black-color : 			#1f2222;
+@grey-color : 			lighten(@black-color, 50%);
+@light-color : 			darken(@body-bg-color,2%);
 
-	@brand-primary-text-color :  	contrast(@brand-primary-color, @brand-black-color, @brand-white-color);
-	@brand-secondary-text-color : 	contrast(@brand-secondary-color, @brand-black-color, @brand-white-color);
-	@brand-tertiary-text-color : 	contrast(@brand-tertiary-color, @brand-black-color, @brand-white-color);
-	@brand-quaternary-text-color : 	contrast(@brand-quaternary-color, @brand-black-color, @brand-white-color);
+@primary-text-color :  	contrast(@primary-color, @black-color, @white-color,50%);
+@secondary-text-color : 	contrast(@secondary-color, @black-color, @white-color,50%);
+@tertiary-text-color : 	contrast(@tertiary-color, @black-color, @white-color,50%);
+@quaternary-text-color : 	contrast(@quaternary-color, @black-color, @white-color,50%);
 
-	@brand-primary-light-color : 		hsl(hue(@brand-primary-color),saturation(@brand-primary-color),95%);;
-	@brand-secondary-light-color : 		hsl(hue(@brand-secondary-color),saturation(@brand-secondary-color),95%);
-	@brand-tertiary-light-color : 		hsl(hue(@brand-tertiary-color),saturation(@brand-tertiary-color),95%);
-	@brand-quaternary-light-color : 	hsl(hue(@brand-quaternary-color),saturation(@brand-quaternary-color),95%);
+@primary-light-color : 		hsl(hue(@primary-color),saturation(@primary-color),95%);
+@secondary-light-color : 		hsl(hue(@secondary-color),saturation(@secondary-color),95%);
+@tertiary-light-color : 		hsl(hue(@tertiary-color),saturation(@tertiary-color),95%);
+@quaternary-light-color : 	hsl(hue(@quaternary-color),saturation(@quaternary-color),95%);
 
-	@brand-success-color:         #5cb85c;
-	@brand-info-color:            #5bc0de;
-	@brand-warning-color:         #f0ad4e;
-	@brand-danger-color:          #d9534f;
+	@success-color:         #5cb85c;
+	@info-color:            #5bc0de;
+	@warning-color:         #f0ad4e;
+	@danger-color:          #d9534f;
 
 	@white-color : 								#fff;
 	@black-color : 								#999;

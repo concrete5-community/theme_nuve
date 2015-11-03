@@ -44,7 +44,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 		endif;
 
 		$title_text =  $th->entities($page->getCollectionName());
-		$title = $useButtonForLink ? "<a href=\"$url\" target=\"$target\">$title_text</a>" : $title_text;
+		$title =  $title_text; // $useButtonForLink ? "<a href=\"$url\" target=\"$target\">$title_text</a>" : $title_text;
 		$tags = isset($tagsObject->pageTags[$page->getCollectionID()]) ? implode(' ',$tagsObject->pageTags[$page->getCollectionID()]) : '';
 
     $date = date('M / d / Y',strtotime($page->getCollectionDatePublic()));
@@ -61,34 +61,47 @@ defined('C5_EXECUTE') or die("Access Denied.");
 		if ($displayThumbnail) :
       $img_att = $page->getAttribute('thumbnail');
       if (is_object($img_att)) :
+				 $thumbnailUrl = $img_att->getThumbnailURL($type->getBaseVersion());
       	$img = Core::make('html/image', array($img_att, true));
       	$imageTag = $img->getTag();
+				else :
+					$thumbnailUrl = '';
       endif;
     endif;
 
 
 ?>
 <div class="<?php echo $column_class . intval(12 / $styleObject->columns)?> item masonry-item <?php echo $tags ?>">
-	<?php if (!$useButtonForLink): ?><a href="<?php echo $url ?>" target="<?php echo $target ?>" class="open-popup-link"><?php endif ?>
-	<?php if ($imageTag) : echo $imageTag;  endif ?>
-	<?php if ($includeEntryText): ?>
-	<div class="info">
-		<div class="vertical-align">
-			<?php if ($includeDate): ?>
-				<div class="meta">
-					<small><i class="fa fa-calendar-o"></i> <?php echo $date?></small>
-					<?php if($o->carousel_meta) : ?><small> <i class="fa fa-user"></i> <?php echo $original_author ?></small><?php endif ?>
-				</div>
-			<?php endif; ?>
-			<?php if ($includeName): ?><h4><?php echo $title ?></h4><?php endif ?>
-			<?php if ($includeDescription): ?><p><?php  echo $description ?></p><?php endif ?>
-			<?php if ($useButtonForLink): ?><a href="<?php echo $url?>" class="button-primary button-flat button-tiny"><?php echo $buttonLinkText?></a><?php endif ?>
+	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+		<?php if (!$useButtonForLink): ?><a href="<?php echo $url ?>" target="<?php echo $target ?>" <?php if ($page->isPopup): ?>class="open-popup-link"<?php endif ?>><?php endif ?>
+	  <div class="mdl-card__title" style="background-image: url('<?php echo $thumbnailUrl ?>'); height:160px; color: #fff;">
+	    <?php if ($includeName): ?><h2 class="mdl-card__title-text"><?php echo $title ?></h2><?php endif ?>
+	  </div>
+		<?php if ($includeDescription): ?>
+	  <div class="mdl-card__supporting-text">
+	    <?php  echo $description ?>
+	  </div>
+		<?php endif ?>
+	  <div class="mdl-card__actions mdl-card--border">
+				<?php if ($useButtonForLink): ?>
+	    <a href="<?php echo $url?>" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect <?php if ($page->isPopup): ?>open-popup-link<?php endif ?> ">
+	      <?php echo $buttonLinkText?>
+	    </a>
+			<?php endif ?>
+	  </div>
+	  <!-- <div class="mdl-card__menu">
+	    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+	      <i class="material-icons">share</i>
+	    </button>
+	  </div> -->
 		</div>
-	</div>
-	<?php endif ?>
 	<?php if (!$useButtonForLink): ?></a><?php endif ?>
+</div>
+
+
 	<?php if ($page->isPopup): ?>
-	<div class='white-popup mfp-hide large-popup' id="portfolio-popup-<?php echo $page->getCollectionID()?>">		<div class="popup-scroll">
+	<div class='white-popup mfp-hide large-popup' id="portfolio-popup-<?php echo $page->getCollectionID()?>">
+		<div class="popup-scroll">
 	<?php if (!$c->isEditMode()) :
 		Request::getInstance()->setCurrentPage($page);
 		echo $view->render("popup_content");
@@ -96,7 +109,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 	endif;
 	?></div></div>
 	<?php endif ?>
-	</div>
+	<!-- </div> -->
 	<?php  endforeach; ?>
 
     <?php  if (count($pages) == 0): ?>

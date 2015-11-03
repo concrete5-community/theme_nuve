@@ -28,6 +28,7 @@ class PageTheme extends \Concrete\Core\Page\Theme\Theme  {
         $this->requireAsset('css', 'font-awesome');
 				$this->requireAsset('css', 'reset');
 				$this->requireAsset('css', 'bootstrap-custom');
+				$this->requireAsset('css', 'animate');
 				$this->requireAsset('css', 'nuve-style');
 	}
 
@@ -45,53 +46,14 @@ class PageTheme extends \Concrete\Core\Page\Theme\Theme  {
 							$elements_colors,
 							// Carousel dots
 							array(
-							'slider-dots-primary', "slider-dots-white", "slider-dots-black",
-							// sqlite_error_string
 							'tag-sorting','keyword-sorting',
-							// Popup result
-							'popup-link',
 							// Layout
 							'no-gap'
 							),
 							// # columns for carousel
-							$columnsClasses)
-        );
-    }
+							$columnsClasses),
+					'horizontal_rule' => array('space-s','space-m','space-l','space-xl','thin','primary','secondary','tertiary','quaternary','dotted','hr-bold'),
 
-    public function getThemeAreaClasses()
-    {
-			// For multiple area
-			$main_area = array('Main');
-			$area_classes = array(
-					// Colors
-					'text-align-top','text-align-center',
-					// Spacing
-					'area-space-s','area-space-m','area-space-l','area-space-xl',
-					// Topics
-					'topic-get-in-touch','topic-idea','topic-help','topic-config','topic-news','topic-conversation',
-					// Animation
-					'wow','flipInX','fadeInDown','zoomIn'
-					);
-			for ($i=1; $i < 8; $i++) {
-					$main_area['Main - ' . $i] = $area_classes;
-					$main_area['Main Column ' . $i] = $area_classes;
-					$main_area['Main Column 1 - ' . $i] = $area_classes;
-					$main_area['Main Column 2 - ' . $i] = $area_classes;
-					$main_area['Main Column 3 - ' . $i] = $area_classes;
-					$main_area['Main Column 4 - ' . $i] = $area_classes;
-			}
-        // Default array
-        $other_area = array(
-            'Header Info' => array('header-info-wrapped')
-        );
-
-        // return array_merge($main_area,$other_area);
-    }
-
-    public function getThemeEditorClasses()
-    {
-        return array(
-            array('title' => t('Button Primary'), 'menuClass' => '', 'spanClass' => 'btn btn-primary')
         );
     }
 
@@ -215,13 +177,14 @@ class PageTheme extends \Concrete\Core\Page\Theme\Theme  {
 		// Block Custom classes
 		function setBlock ($b) {
 
+			$new = false;
 			// On definie le style de bloc que si il est completement different de celui déjà réglé dans la page
 			if (!is_object($this->block)) {
 				$this->block = $b;
 				$new = true;
 			}
-			if (($b->getBlockTypeHandle() != $this->block->getBlockTypeHandle() &&
-				  $b->getBlockID() != $this->block->getBlockID()) ||
+			if ($b->getBlockTypeHandle() != $this->block->getBlockTypeHandle() ||
+				  $b->getBlockID() != $this->block->getBlockID() ||
 					$new
 				 ):
 

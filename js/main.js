@@ -64,7 +64,13 @@ jQuery(document).ready(function($){
 		}
     }
 
-	function scrollAnimation(){
+	function scrollAnimation(e){
+
+		if ($('.mfp-ready').size()) {
+				e.preventDefault();
+			  e.stopPropagation();
+			  return false;
+		}
 		//normal scroll - use requestAnimationFrame (if defined) to optimize performance
 		(!window.requestAnimationFrame) ? animateSection() : window.requestAnimationFrame(animateSection);
 	}
@@ -101,6 +107,8 @@ jQuery(document).ready(function($){
 	}
 
 	function initHijacking() {
+
+
 		// initialize section style - scrollhijacking
 		var visibleSection = sectionsAvailable.filter('.visible'),
 			topSection = visibleSection.prevAll('.cd-section'),
@@ -120,6 +128,7 @@ jQuery(document).ready(function($){
 	}
 
 	function scrollHijacking (event) {
+		if ($('.mfp-ready').size()) return;
 		// on mouse scroll - check if animate section
         if (event.originalEvent.detail < 0 || event.originalEvent.wheelDelta > 0) {
             delta--;

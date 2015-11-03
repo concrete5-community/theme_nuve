@@ -15,7 +15,7 @@ endif;
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.indigo-pink.min.css">
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <?php Loader::element('header_required', array('pageTitle' => $pageTitle));?>
     <?php echo $html->css($view->getStylesheet('main.less')); ?>
 </head>

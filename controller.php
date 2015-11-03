@@ -15,7 +15,7 @@ class Controller extends \Concrete\Core\Package\Package {
 
 	protected $pkgHandle = 'theme_nuve';
 	protected $appVersionRequired = '5.7.5';
-	protected $pkgVersion = '0.1.7';
+	protected $pkgVersion = '0.2.1';
 	protected $pkg;
 
 	public function getPackageDescription() {
@@ -39,7 +39,7 @@ class Controller extends \Concrete\Core\Package\Package {
  		$al->register( 'css', 'reset', 'themes/nuve/css/static/reset.css', array(), $this );
 		$al->register( 'css', 'nuve-style', 'themes/nuve/css/static/style.css', array(), $this );
 		$al->register( 'css', 'bootstrap-custom', 'themes/nuve/css/static/bootstrap.custom.min.css', array(), $this );
-
+		$al->register( 'css', 'animate', 'themes/nuve/css/static/animate.css', array(), $this );
  	}
 	public function install() {
 
@@ -64,6 +64,8 @@ class Controller extends \Concrete\Core\Package\Package {
 		$ci->importContentFile($this->getPackagePath() . '/config/install/base/blocktypes.xml');
 		if (!is_object(PageType::getByHandle('blog_entry')))
 			$ci->importContentFile($this->getPackagePath() . '/config/install/base/page_type_blog.xml');
+		if (!is_object(PageType::getByHandle('work')))
+			$ci->importContentFile($this->getPackagePath() . '/config/install/base/page_type_work.xml');
 
 
 	}

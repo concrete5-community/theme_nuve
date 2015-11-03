@@ -2,9 +2,6 @@
 defined('C5_EXECUTE') or die("Access Denied.");
 if (!$c->isPopup) :
 	$this->inc('elements/head.php',array());
-	else :
-		$r = Request::getInstance();
-		$r->setCurrentPage($c);
 endif;
 ?>
 
