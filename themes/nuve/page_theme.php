@@ -35,24 +35,20 @@ class PageTheme extends \Concrete\Core\Page\Theme\Theme  {
 
     public function getThemeBlockClasses()
     {
-			$elements_colors = array('element-primary','element-secondary','element-tertiary','element-quaternary','element-light');
 			$columns = $margin = array();
 			for ($i=1; $i < 7; $i++) $columnsClasses[] = "$i-column";
 
         return array(
 					'page_list' => array_merge(
-							// Accordions & tabs colors
-							$elements_colors,
-							// Carousel dots
 							array(
+							// page-list sorting
 							'tag-sorting','keyword-sorting',
 							// Layout
 							'no-gap'
 							),
-							// # columns for carousel
+							// # columns for page-list
 							$columnsClasses),
-					'horizontal_rule' => array('space-s','space-m','space-l','space-xl','thin','primary','secondary','tertiary','quaternary','dotted','hr-bold'),
-
+					'horizontal_rule' => array('space-s','space-m','space-l','space-xl','thin','dotted')
         );
     }
 
@@ -96,7 +92,6 @@ class PageTheme extends \Concrete\Core\Page\Theme\Theme  {
 	  }
 
 		function getAreaStyles ($a,$c) {
-			// $c = $a->getAreaCollectionObject();
 			$style = $c->getAreaCustomStyle($a);
 			if (is_object($style)) {
 					$set = $style->getStyleSet();
@@ -173,11 +168,9 @@ class PageTheme extends \Concrete\Core\Page\Theme\Theme  {
 
         return $css;
     }
-		// Block Custom classes
-		function setBlock ($b) {
 
+		function setBlock ($b) {
 			$new = false;
-			// On definie le style de bloc que si il est completement different de celui déjà réglé dans la page
 			if (!is_object($this->block)) {
 				$this->block = $b;
 				$new = true;
@@ -186,13 +179,9 @@ class PageTheme extends \Concrete\Core\Page\Theme\Theme  {
 				  $b->getBlockID() != $this->block->getBlockID() ||
 					$new
 				 ):
-
-				// on extrait les classes
-				// Et on les sauvegardes
 				$style = $b->getCustomStyle();
 				$this->cc = (is_object($b) && is_object($style)) ? $style->getStyleSet()->getCustomClass() : '';
 				$this->cs =  is_object($style) ? $style : false;
-
 			endif;
 		}
 

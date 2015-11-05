@@ -2,7 +2,6 @@
 defined('C5_EXECUTE') or die("Access Denied.");
 
 	$c = Page::getCurrentPage();
-	// var_dump( Request::getInstance());
 	$pageTheme = $c->getCollectionThemeObject();
 	$t =  $c->getCollectionThemeObject();
 	$rssUrl = $showRss ? $controller->getRssUrl($b) : '';
@@ -15,9 +14,6 @@ defined('C5_EXECUTE') or die("Access Denied.");
 	$column_class = $styleObject->columns > 3 ? 'col-md-' : 'col-sm-';
 	$gap = !(in_array('no-gap',$styleObject->classesArray));
 	$type = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle($styleObject->columns > 1 ? 'medium' : 'large');
-
-// Some settings for this template :
-
 	$topicAttributeKeyHandle = "project_topics";
 	$tagAttributeHandle = "tags";
 
@@ -89,11 +85,6 @@ defined('C5_EXECUTE') or die("Access Denied.");
 	    </a>
 			<?php endif ?>
 	  </div>
-	  <!-- <div class="mdl-card__menu">
-	    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-	      <i class="material-icons">share</i>
-	    </button>
-	  </div> -->
 		</div>
 	<?php if (!$useButtonForLink): ?></a><?php endif ?>
 </div>
@@ -109,7 +100,6 @@ defined('C5_EXECUTE') or die("Access Denied.");
 	endif;
 	?></div></div>
 	<?php endif ?>
-	<!-- </div> -->
 	<?php  endforeach; ?>
 
     <?php  if (count($pages) == 0): ?>

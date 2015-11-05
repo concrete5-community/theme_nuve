@@ -7,8 +7,8 @@ $this->inc('elements/head.php');
 
 <nav>
 	<ul class="cd-vertical-nav">
-		<li><a href="#0" class="cd-prev inactive">Next</a></li>
-		<li><a href="#0" class="cd-next">Prev</a></li>
+		<li><a href="#0" class="cd-prev inactive"><?php echo ('Next') ?></a></li>
+		<li><a href="#0" class="cd-next"><?php echo t('Prev') ?></a></li>
 	</ul>
 </nav> <!-- .cd-vertical-nav -->
 

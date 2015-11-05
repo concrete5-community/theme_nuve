@@ -27,4 +27,4 @@ else $accent_color = 'pink';
     <?php echo $html->css($view->getStylesheet('main.less')); ?>
 </head>
 <body class="<?php echo $c->isEditMode() ? 'edit-mode' : '' ?>" data-hijacking="<?php echo $hijacking?>" data-animation="<?php echo $transition_handle?>">
-  <div class="<?php echo $c->getPageWrapperClass()?>">
+  <div class="nuve <?php echo $c->getPageWrapperClass()?>">

@@ -2,7 +2,6 @@
 defined('C5_EXECUTE') or die("Access Denied.");
 
 	$c = Page::getCurrentPage();
-	// var_dump( Request::getInstance());
 	$pageTheme = $c->getCollectionThemeObject();
 	$t =  $c->getCollectionThemeObject();
 	$rssUrl = $showRss ? $controller->getRssUrl($b) : '';
@@ -15,9 +14,6 @@ defined('C5_EXECUTE') or die("Access Denied.");
 	$column_class = $styleObject->columns > 3 ? 'col-md-' : 'col-sm-';
 	$gap = !(in_array('no-gap',$styleObject->classesArray));
 	$type = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle($styleObject->columns > 1 ? 'medium' : 'large');
-
-// Some settings for this template :
-
 	$topicAttributeKeyHandle = "project_topics";
 	$tagAttributeHandle = "tags";
 

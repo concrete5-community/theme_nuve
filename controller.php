@@ -20,7 +20,7 @@ class Controller extends \Concrete\Core\Package\Package {
 	protected $pkg;
 
 	public function getPackageDescription() {
-		return t("A One page theme with sections navigation");
+		return t("A perfectly crafted One page template with sublime scroll");
 	}
 
 	public function getPackageName() {

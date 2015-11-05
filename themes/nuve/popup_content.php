@@ -15,6 +15,6 @@ endif;
 </main>
 <?php if (!$c->isPopup)	: $this->inc('elements/footer.php'); ?>
 	<style media="screen">
-		div.an {overflow: visible}
+		div.nuve {overflow: visible}
 	</style>
 <?php endif?>
