@@ -15,7 +15,8 @@ class Controller extends \Concrete\Core\Package\Package {
 
 	protected $pkgHandle = 'theme_nuve';
 	protected $appVersionRequired = '5.7.5';
-	protected $pkgVersion = '0.2.2';
+	protected $pkgVersion = '0.2.3';
+	protected $pkgAllowsFullContentSwap = true;
 	protected $pkg;
 
 	public function getPackageDescription() {
@@ -40,13 +41,12 @@ class Controller extends \Concrete\Core\Package\Package {
 		$al->register( 'css', 'bootstrap-custom', 'themes/nuve/css/static/bootstrap.custom.min.css', array(), $this );
 		$al->register( 'css', 'animate', 'themes/nuve/css/static/animate.css', array(), $this );
  	}
-	public function install() {
-
+	public function install($data = array()) {
 	// Get the package object
 		$this->pkg = parent::install();
 
 	// Installing
-		 $this->installOrUpgrade();
+		 $this->installOrUpgrade($data);
 	}
 
 	public function upgrade () {
@@ -54,20 +54,19 @@ class Controller extends \Concrete\Core\Package\Package {
 		$this->installOrUpgrade();
 	}
 
-	private function installOrUpgrade() {
+	private function installOrUpgrade($data = array()) {
 
 		$ci = new RbInstaller($this->pkg);
 		$ci->importContentFile($this->getPackagePath() . '/config/install/base/themes.xml');
 		$ci->importContentFile($this->getPackagePath() . '/config/install/base/attributes.xml');
 		$ci->importContentFile($this->getPackagePath() . '/config/install/base/page_templates.xml');
-		$ci->importContentFile($this->getPackagePath() . '/config/install/base/blocktypes.xml');
-		$ci->importContentFile($this->getPackagePath() . '/config/install/base/pages.xml');
-		if (!is_object(PageType::getByHandle('blog_entry')))
-			$ci->importContentFile($this->getPackagePath() . '/config/install/base/page_type_blog.xml');
-		if (!is_object(PageType::getByHandle('work')))
-			$ci->importContentFile($this->getPackagePath() . '/config/install/base/page_type_work.xml');
-
-
+		if (!isset($data['pkgDoFullContentSwap']) || $data['pkgDoFullContentSwap'] === '0') :
+			$ci->importContentFile($this->getPackagePath() . '/config/install/base/pages.xml');
+			if (!is_object(PageType::getByHandle('blog_entry')))
+				$ci->importContentFile($this->getPackagePath() . '/config/install/base/page_type_blog.xml');
+			if (!is_object(PageType::getByHandle('work')))
+				$ci->importContentFile($this->getPackagePath() . '/config/install/base/page_type_work.xml');
+		endif;
 	}
 
 }

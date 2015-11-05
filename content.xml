@@ -14,6 +14,210 @@
       </type>
     </attributekey>
   </attributekeys>
+  <pagetypes>
+    <pagetype name="Blog Entry" handle="blog_entry" package="" launch-in-composer="1" is-frequently-added="1">
+      <pagetemplates type="custom" default="popup_content">
+        <pagetemplate handle="popup_content"/>
+      </pagetemplates>
+      <target handle="parent_page" package="" path="/blog"/>
+      <composer>
+        <formlayout>
+          <set name="Basics" description="">
+            <control custom-template="" required="1" custom-label="" description="" type="core_page_property" handle="name"/>
+            <control custom-template="" custom-label="" description="" type="core_page_property" handle="description"/>
+            <control custom-template="" custom-label="" description="" type="collection_attribute" handle="tags"/>
+            <control custom-template="" custom-label="" description="" type="collection_attribute" handle="thumbnail"/>
+          </set>
+          <set name="Content" description="">
+            <control custom-template="" custom-label="" description="" output-control-id="8KJMuI7O" type="block" handle="content"/>
+          </set>
+        </formlayout>
+        <output>
+          <pagetemplate handle="popup_content">
+            <page name="" path="" filename="" pagetype="blog_entry" template="popup_content" user="admin" description="" package="">
+              <area name="Popup">
+                  <blocks>
+                    <block type="page_title" name="" custom-template="byline.php">
+                        <data table="btPageTitle">
+                            <record>
+                                <useCustomTitle><![CDATA[0]]></useCustomTitle>
+                                <titleText><![CDATA[[Page Title]]]></titleText>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="tags" name="">
+                      <data table="btTags">
+                        <record>
+                          <title><![CDATA[]]></title>
+                          <targetCID>{ccm:export:page:/home}</targetCID>
+                          <displayMode><![CDATA[page]]></displayMode>
+                          <cloudCount><![CDATA[0]]></cloudCount>
+                        </record>
+                      </data>
+                    </block>
+                    <block type="horizontal_rule" name="">
+                    </block>
+                  <block type="core_area_layout" name="" custom-template="two_nogap.php">
+                    <style>
+                      <backgroundImage>{ccm:export:file:1366-500.png}</backgroundImage>
+                      <backgroundRepeat>no-repeat</backgroundRepeat>
+                      <customClass>left-primary</customClass>
+                    </style>
+                    <arealayout type="theme-grid" columns="12">
+                      <columns>
+                        <column span="6" offset="0">
+                          <block type="page_attribute_display" name="">
+                            <data table="btPageAttributeDisplay">
+                              <record>
+                                <attributeHandle><![CDATA[rpv_pageDescription]]></attributeHandle>
+                                <attributeTitleText><![CDATA[]]></attributeTitleText>
+                                <displayTag><![CDATA[p]]></displayTag>
+                                <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                                <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                                <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
+                              </record>
+                            </data>
+                          </block>
+                        </column>
+                        <column span="5" offset="1">
+                          <block type="page_attribute_display" name="">
+                            <data table="btPageAttributeDisplay">
+                              <record>
+                                <attributeHandle><![CDATA[thumbnail]]></attributeHandle>
+                                <attributeTitleText><![CDATA[]]></attributeTitleText>
+                                <displayTag><![CDATA[p]]></displayTag>
+                                <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                                <thumbnailHeight><![CDATA[400]]></thumbnailHeight>
+                                <thumbnailWidth><![CDATA[400]]></thumbnailWidth>
+                              </record>
+                            </data>
+                          </block>
+                        </column>
+                      </columns>
+                    </arealayout>
+                  </block>
+                  <block type="horizontal_rule" name="">
+                    <style>
+                      <backgroundRepeat>no-repeat</backgroundRepeat>
+                      <customClass>space-s</customClass>
+                    </style>
+                  </block>
+                  <block type="core_page_type_composer_control_output" name="" mc-block-id="aD3oPTvi">
+                    <control output-control-id="8KJMuI7O"/>
+                  </block>
+                </blocks>
+              </area>
+            </page>
+          </pagetemplate>
+        </output>
+      </composer>
+    </pagetype>
+    <pagetype name="A new Work" handle="work" package="" launch-in-composer="1" is-frequently-added="1">
+      <pagetemplates type="custom" default="popup_content">
+        <pagetemplate handle="popup_content"/>
+      </pagetemplates>
+      <target handle="parent_page" package="" path="/portfolio"/>
+      <composer>
+        <formlayout>
+          <set name="Basics" description="">
+            <control custom-template="" required="1" custom-label="" description="" type="core_page_property" handle="name"/>
+            <control custom-template="" custom-label="" description="" type="core_page_property" handle="description"/>
+            <control custom-template="" custom-label="" description="" type="collection_attribute" handle="tags"/>
+            <control custom-template="" custom-label="" description="" type="collection_attribute" handle="thumbnail"/>
+          </set>
+          <set name="Content" description="">
+            <control custom-template="" custom-label="" description="" output-control-id="8KJMuI7O" type="block" handle="content"/>
+          </set>
+        </formlayout>
+        <output>
+          <pagetemplate handle="popup_content">
+            <page name="" path="" filename="" pagetype="work" template="popup_content" user="admin" description="" package="">
+              <area name="Popup">
+                <blocks>
+                  <block type="page_attribute_display" name="">
+                    <data table="btPageAttributeDisplay">
+                      <record>
+                        <attributeHandle><![CDATA[rpv_pageName]]></attributeHandle>
+                        <attributeTitleText><![CDATA[]]></attributeTitleText>
+                        <displayTag><![CDATA[h3]]></displayTag>
+                        <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                        <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                        <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
+                      </record>
+                    </data>
+                  </block>
+                  <block type="core_area_layout" name="" custom-template="two_nogap.php">
+                    <style>
+                      <backgroundImage>{ccm:export:file:1366-500.png}</backgroundImage>
+                      <backgroundRepeat>no-repeat</backgroundRepeat>
+                      <customClass>left-primary</customClass>
+                    </style>
+                    <arealayout type="theme-grid" columns="12">
+                      <columns>
+                        <column span="8" offset="0">
+                          <block type="page_attribute_display" name="">
+                            <data table="btPageAttributeDisplay">
+                              <record>
+                                <attributeHandle><![CDATA[rpv_pageDescription]]></attributeHandle>
+                                <attributeTitleText><![CDATA[]]></attributeTitleText>
+                                <displayTag><![CDATA[p]]></displayTag>
+                                <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                                <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                                <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
+                              </record>
+                            </data>
+                          </block>
+                        </column>
+                        <column span="4" offset="0">
+                          <block type="tags" name="">
+                            <data table="btTags">
+                              <record>
+                                <title><![CDATA[]]></title>
+                                <targetCID>{ccm:export:page:/home}</targetCID>
+                                <displayMode><![CDATA[page]]></displayMode>
+                                <cloudCount><![CDATA[0]]></cloudCount>
+                              </record>
+                            </data>
+                          </block>
+                        </column>
+                      </columns>
+                    </arealayout>
+                  </block>
+                  <block type="horizontal_rule" name="">
+                    <style>
+                      <backgroundRepeat>no-repeat</backgroundRepeat>
+                      <customClass>space-s</customClass>
+                    </style>
+                  </block>
+                  <block type="page_attribute_display" name="">
+                    <data table="btPageAttributeDisplay">
+                      <record>
+                        <attributeHandle><![CDATA[thumbnail]]></attributeHandle>
+                        <attributeTitleText><![CDATA[]]></attributeTitleText>
+                        <displayTag><![CDATA[p]]></displayTag>
+                        <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                        <thumbnailHeight><![CDATA[900]]></thumbnailHeight>
+                        <thumbnailWidth><![CDATA[900]]></thumbnailWidth>
+                      </record>
+                    </data>
+                  </block>
+                  <block type="horizontal_rule" name="">
+                    <style>
+                      <backgroundRepeat>no-repeat</backgroundRepeat>
+                      <customClass>space-s</customClass>
+                    </style>
+                  </block>
+                  <block type="core_page_type_composer_control_output" name="" mc-block-id="aD3oPTvi">
+                    <control output-control-id="8KJMuI7O"/>
+                  </block>
+                </blocks>
+              </area>
+            </page>
+          </pagetemplate>
+        </output>
+      </composer>
+    </pagetype>
+  </pagetypes>
   <pages>
     <page name="Home" path="" filename="" pagetype="" template="full" user="admin" description="" package="">
       <attributes>
@@ -306,35 +510,33 @@
       </area>
       <area name="Main - 5"/>
     </page>
-    <page name="Work" path="/work" filename="" pagetype="page" template="full" user="admin" description="" package="">
+    <page name="Portfolio" path="/portfolio" filename="" pagetype="page" template="popup_content" user="admin" description="" package="">
       <attributes>
-        <attributekey handle="meta_title">
-          <value><![CDATA[]]></value>
+        <attributekey handle="exclude_nav">
+          <value><![CDATA[1]]></value>
         </attributekey>
-        <attributekey handle="meta_description">
-          <value><![CDATA[]]></value>
+        <attributekey handle="exclude_page_list">
+          <value><![CDATA[1]]></value>
         </attributekey>
-        <attributekey handle="header_extra_content">
-          <value><![CDATA[]]></value>
-        </attributekey>
-        <attributekey handle="exclude_sitemapxml">
-          <value><![CDATA[0]]></value>
+        <attributekey handle="exclude_search_index">
+          <value><![CDATA[1]]></value>
         </attributekey>
       </attributes>
-      <area name="Main">
-        <blocks>
-          <block type="content" name="">
-            <data table="btContentLocal">
-              <record>
-                <content><![CDATA[]]></content>
-              </record>
-            </data>
-          </block>
-        </blocks>
-      </area>
-      <area name="Main - 1"/>
     </page>
-    <page name="Sublime !" path="/work/sublime" filename="" pagetype="work" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
+    <page name="Blog" path="/blog" filename="" pagetype="page" template="popup_content" user="admin" description="" package="">
+      <attributes>
+        <attributekey handle="exclude_nav">
+          <value><![CDATA[1]]></value>
+        </attributekey>
+        <attributekey handle="exclude_page_list">
+          <value><![CDATA[1]]></value>
+        </attributekey>
+        <attributekey handle="exclude_search_index">
+          <value><![CDATA[1]]></value>
+        </attributekey>
+      </attributes>
+    </page>
+    <page name="Sublime !" path="/portfolio/sublime" filename="" pagetype="work" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
       <attributes>
         <attributekey handle="tags">
           <value>
@@ -349,9 +551,61 @@
       </attributes>
       <area name="Popup">
         <blocks>
-          <block mc-block-id="3fUmDc6S"/>
-          <block mc-block-id="1y6viAjF"/>
-          <block mc-block-id="aC03gs0i"/>
+          <block type="page_attribute_display" name="">
+            <data table="btPageAttributeDisplay">
+              <record>
+                <attributeHandle><![CDATA[rpv_pageName]]></attributeHandle>
+                <attributeTitleText><![CDATA[]]></attributeTitleText>
+                <displayTag><![CDATA[h3]]></displayTag>
+                <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
+              </record>
+            </data>
+          </block>
+          <block type="core_area_layout" name="" custom-template="two_nogap.php">
+            <style>
+              <backgroundImage>{ccm:export:file:1366-500.png}</backgroundImage>
+              <backgroundRepeat>no-repeat</backgroundRepeat>
+              <customClass>left-primary</customClass>
+            </style>
+            <arealayout type="theme-grid" columns="12">
+              <columns>
+                <column span="8" offset="0">
+                  <block type="page_attribute_display" name="">
+                    <data table="btPageAttributeDisplay">
+                      <record>
+                        <attributeHandle><![CDATA[rpv_pageDescription]]></attributeHandle>
+                        <attributeTitleText><![CDATA[]]></attributeTitleText>
+                        <displayTag><![CDATA[p]]></displayTag>
+                        <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                        <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                        <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
+                      </record>
+                    </data>
+                  </block>
+                </column>
+                <column span="4" offset="0">
+                  <block type="tags" name="">
+                    <data table="btTags">
+                      <record>
+                        <title><![CDATA[]]></title>
+                        <targetCID>{ccm:export:page:/home}</targetCID>
+                        <displayMode><![CDATA[page]]></displayMode>
+                        <cloudCount><![CDATA[0]]></cloudCount>
+                      </record>
+                    </data>
+                  </block>
+                </column>
+              </columns>
+            </arealayout>
+          </block>
+          <block type="horizontal_rule" name="">
+            <style>
+              <backgroundRepeat>no-repeat</backgroundRepeat>
+              <customClass>space-s</customClass>
+            </style>
+          </block>
           <block type="page_attribute_display" name="">
             <data table="btPageAttributeDisplay">
               <record>
@@ -364,80 +618,25 @@
               </record>
             </data>
           </block>
-          <block mc-block-id="sPUXYJ3g"/>
-          <block type="content" name="">
-            <data table="btContentLocal">
-              <record>
-                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space"></span></span></span></span></p>]]></content>
-              </record>
-            </data>
+          <block type="horizontal_rule" name="">
+            <style>
+              <backgroundRepeat>no-repeat</backgroundRepeat>
+              <customClass>space-s</customClass>
+            </style>
+          </block>
+          <block type="core_page_type_composer_control_output" name="" mc-block-id="aD3oPTvi">
+            <control output-control-id="8KJMuI7O"/>
           </block>
         </blocks>
       </area>
     </page>
-    <page name="Blog" path="/blog" filename="" pagetype="page" template="full" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
-      <area name="Main">
-        <blocks>
-          <block type="content" name="">
-            <data table="btContentLocal">
-              <record>
-                <content><![CDATA[]]></content>
-              </record>
-            </data>
-          </block>
-        </blocks>
-      </area>
-    </page>
-    <page name="What a frame !" path="/blog/what-frame" filename="" pagetype="blog_entry" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
+    <page name="Superb !" path="/portfolio/superb" filename="" pagetype="work" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
       <attributes>
-        <attributekey handle="tags">
-          <value>
-            <option>Writing</option>
-            <option>Story</option>
-          </value>
-        </attributekey>
-        <attributekey handle="thumbnail">
-          <value>
-            <fID>0</fID>
-          </value>
-        </attributekey>
-      </attributes>
-      <area name="Popup">
-        <blocks>
-          <block mc-block-id="peb738Jt"/>
-          <block mc-block-id="9cQBzshf"/>
-          <block type="horizontal_rule" name=""/>
-          <block mc-block-id="2iPGKPGX"/>
-          <block mc-block-id="5Pw7AOQi"/>
-          <block type="content" name="">
-            <data table="btContentLocal">
-              <record>
-                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span></p><blockquote><span class="redactor-invisible-space"> Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. </span></span></blockquote><p><span class="redactor-invisible-space"><span class="redactor-invisible-space">Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space"></span></span></span></span></span></span></span></span></p>]]></content>
-              </record>
-            </data>
-          </block>
-        </blocks>
-      </area>
-    </page>
-    <page name="Superb !" path="/work/superb" filename="" pagetype="work" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
-      <attributes>
-        <attributekey handle="meta_title">
-          <value><![CDATA[]]></value>
-        </attributekey>
-        <attributekey handle="meta_description">
-          <value><![CDATA[]]></value>
-        </attributekey>
-        <attributekey handle="header_extra_content">
-          <value><![CDATA[]]></value>
-        </attributekey>
         <attributekey handle="tags">
           <value>
             <option>Design</option>
             <option>Print</option>
           </value>
-        </attributekey>
-        <attributekey handle="exclude_sitemapxml">
-          <value><![CDATA[0]]></value>
         </attributekey>
         <attributekey handle="thumbnail">
           <value>
@@ -447,40 +646,92 @@
       </attributes>
       <area name="Popup">
         <blocks>
-          <block mc-block-id="3fUmDc6S"/>
-          <block mc-block-id="1y6viAjF"/>
-          <block mc-block-id="aC03gs0i"/>
-          <block mc-block-id="kaYcl25D"/>
-          <block mc-block-id="sPUXYJ3g"/>
-          <block type="content" name="">
-            <data table="btContentLocal">
+          <block type="page_attribute_display" name="">
+            <data table="btPageAttributeDisplay">
               <record>
-                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space"></span></span></span></span></p>]]></content>
+                <attributeHandle><![CDATA[rpv_pageName]]></attributeHandle>
+                <attributeTitleText><![CDATA[]]></attributeTitleText>
+                <displayTag><![CDATA[h3]]></displayTag>
+                <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
               </record>
             </data>
+          </block>
+          <block type="core_area_layout" name="" custom-template="two_nogap.php">
+            <style>
+              <backgroundImage>{ccm:export:file:1366-500.png}</backgroundImage>
+              <backgroundRepeat>no-repeat</backgroundRepeat>
+              <customClass>left-primary</customClass>
+            </style>
+            <arealayout type="theme-grid" columns="12">
+              <columns>
+                <column span="8" offset="0">
+                  <block type="page_attribute_display" name="">
+                    <data table="btPageAttributeDisplay">
+                      <record>
+                        <attributeHandle><![CDATA[rpv_pageDescription]]></attributeHandle>
+                        <attributeTitleText><![CDATA[]]></attributeTitleText>
+                        <displayTag><![CDATA[p]]></displayTag>
+                        <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                        <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                        <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
+                      </record>
+                    </data>
+                  </block>
+                </column>
+                <column span="4" offset="0">
+                  <block type="tags" name="">
+                    <data table="btTags">
+                      <record>
+                        <title><![CDATA[]]></title>
+                        <targetCID>{ccm:export:page:/home}</targetCID>
+                        <displayMode><![CDATA[page]]></displayMode>
+                        <cloudCount><![CDATA[0]]></cloudCount>
+                      </record>
+                    </data>
+                  </block>
+                </column>
+              </columns>
+            </arealayout>
+          </block>
+          <block type="horizontal_rule" name="">
+            <style>
+              <backgroundRepeat>no-repeat</backgroundRepeat>
+              <customClass>space-s</customClass>
+            </style>
+          </block>
+          <block type="page_attribute_display" name="">
+            <data table="btPageAttributeDisplay">
+              <record>
+                <attributeHandle><![CDATA[thumbnail]]></attributeHandle>
+                <attributeTitleText><![CDATA[]]></attributeTitleText>
+                <displayTag><![CDATA[p]]></displayTag>
+                <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                <thumbnailHeight><![CDATA[900]]></thumbnailHeight>
+                <thumbnailWidth><![CDATA[900]]></thumbnailWidth>
+              </record>
+            </data>
+          </block>
+          <block type="horizontal_rule" name="">
+            <style>
+              <backgroundRepeat>no-repeat</backgroundRepeat>
+              <customClass>space-s</customClass>
+            </style>
+          </block>
+          <block type="core_page_type_composer_control_output" name="" mc-block-id="aD3oPTvi">
+            <control output-control-id="8KJMuI7O"/>
           </block>
         </blocks>
       </area>
     </page>
-    <page name="Awesome" path="/work/awesome" filename="" pagetype="work" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
+    <page name="Awesome" path="/portfolio/awesome" filename="" pagetype="work" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
       <attributes>
-        <attributekey handle="meta_title">
-          <value><![CDATA[]]></value>
-        </attributekey>
-        <attributekey handle="meta_description">
-          <value><![CDATA[]]></value>
-        </attributekey>
-        <attributekey handle="header_extra_content">
-          <value><![CDATA[]]></value>
-        </attributekey>
         <attributekey handle="tags">
           <value>
             <option>Design</option>
             <option>Colored</option>
           </value>
-        </attributekey>
-        <attributekey handle="exclude_sitemapxml">
-          <value><![CDATA[0]]></value>
         </attributekey>
         <attributekey handle="thumbnail">
           <value>
@@ -490,40 +741,273 @@
       </attributes>
       <area name="Popup">
         <blocks>
-          <block mc-block-id="3fUmDc6S"/>
-          <block mc-block-id="1y6viAjF"/>
-          <block mc-block-id="aC03gs0i"/>
-          <block mc-block-id="kaYcl25D"/>
-          <block mc-block-id="sPUXYJ3g"/>
-          <block type="content" name="">
-            <data table="btContentLocal">
+          <block type="page_attribute_display" name="">
+            <data table="btPageAttributeDisplay">
               <record>
-                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space"></span></span></span></span></p>]]></content>
+                <attributeHandle><![CDATA[rpv_pageName]]></attributeHandle>
+                <attributeTitleText><![CDATA[]]></attributeTitleText>
+                <displayTag><![CDATA[h3]]></displayTag>
+                <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
               </record>
             </data>
+          </block>
+          <block type="core_area_layout" name="" custom-template="two_nogap.php">
+            <style>
+              <backgroundImage>{ccm:export:file:1366-500.png}</backgroundImage>
+              <backgroundRepeat>no-repeat</backgroundRepeat>
+              <customClass>left-primary</customClass>
+            </style>
+            <arealayout type="theme-grid" columns="12">
+              <columns>
+                <column span="8" offset="0">
+                  <block type="page_attribute_display" name="">
+                    <data table="btPageAttributeDisplay">
+                      <record>
+                        <attributeHandle><![CDATA[rpv_pageDescription]]></attributeHandle>
+                        <attributeTitleText><![CDATA[]]></attributeTitleText>
+                        <displayTag><![CDATA[p]]></displayTag>
+                        <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                        <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                        <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
+                      </record>
+                    </data>
+                  </block>
+                </column>
+                <column span="4" offset="0">
+                  <block type="tags" name="">
+                    <data table="btTags">
+                      <record>
+                        <title><![CDATA[]]></title>
+                        <targetCID>{ccm:export:page:/home}</targetCID>
+                        <displayMode><![CDATA[page]]></displayMode>
+                        <cloudCount><![CDATA[0]]></cloudCount>
+                      </record>
+                    </data>
+                  </block>
+                </column>
+              </columns>
+            </arealayout>
+          </block>
+          <block type="horizontal_rule" name="">
+            <style>
+              <backgroundRepeat>no-repeat</backgroundRepeat>
+              <customClass>space-s</customClass>
+            </style>
+          </block>
+          <block type="page_attribute_display" name="">
+            <data table="btPageAttributeDisplay">
+              <record>
+                <attributeHandle><![CDATA[thumbnail]]></attributeHandle>
+                <attributeTitleText><![CDATA[]]></attributeTitleText>
+                <displayTag><![CDATA[p]]></displayTag>
+                <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                <thumbnailHeight><![CDATA[900]]></thumbnailHeight>
+                <thumbnailWidth><![CDATA[900]]></thumbnailWidth>
+              </record>
+            </data>
+          </block>
+          <block type="horizontal_rule" name="">
+            <style>
+              <backgroundRepeat>no-repeat</backgroundRepeat>
+              <customClass>space-s</customClass>
+            </style>
+          </block>
+          <block type="core_page_type_composer_control_output" name="" mc-block-id="aD3oPTvi">
+            <control output-control-id="8KJMuI7O"/>
           </block>
         </blocks>
       </area>
     </page>
-    <page name="Blog me !" path="/blog/blog-me" filename="" pagetype="blog_entry" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
+    <page name="Let me try !" path="/portfolio/let-me-try" filename="" pagetype="work" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
       <attributes>
-        <attributekey handle="meta_title">
-          <value><![CDATA[]]></value>
+        <attributekey handle="tags">
+          <value>
+            <option>Colored</option>
+          </value>
         </attributekey>
-        <attributekey handle="meta_description">
-          <value><![CDATA[]]></value>
+        <attributekey handle="thumbnail">
+          <value>
+            <fID>{ccm:export:file:mountains.jpg}</fID>
+          </value>
         </attributekey>
-        <attributekey handle="header_extra_content">
-          <value><![CDATA[]]></value>
-        </attributekey>
+      </attributes>
+      <area name="Popup">
+        <blocks>
+          <block type="page_attribute_display" name="">
+            <data table="btPageAttributeDisplay">
+              <record>
+                <attributeHandle><![CDATA[rpv_pageName]]></attributeHandle>
+                <attributeTitleText><![CDATA[]]></attributeTitleText>
+                <displayTag><![CDATA[h3]]></displayTag>
+                <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
+              </record>
+            </data>
+          </block>
+          <block type="core_area_layout" name="" custom-template="two_nogap.php">
+            <style>
+              <backgroundImage>{ccm:export:file:1366-500.png}</backgroundImage>
+              <backgroundRepeat>no-repeat</backgroundRepeat>
+              <customClass>left-primary</customClass>
+            </style>
+            <arealayout type="theme-grid" columns="12">
+              <columns>
+                <column span="8" offset="0">
+                  <block type="page_attribute_display" name="">
+                    <data table="btPageAttributeDisplay">
+                      <record>
+                        <attributeHandle><![CDATA[rpv_pageDescription]]></attributeHandle>
+                        <attributeTitleText><![CDATA[]]></attributeTitleText>
+                        <displayTag><![CDATA[p]]></displayTag>
+                        <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                        <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                        <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
+                      </record>
+                    </data>
+                  </block>
+                </column>
+                <column span="4" offset="0">
+                  <block type="tags" name="">
+                    <data table="btTags">
+                      <record>
+                        <title><![CDATA[]]></title>
+                        <targetCID>{ccm:export:page:/home}</targetCID>
+                        <displayMode><![CDATA[page]]></displayMode>
+                        <cloudCount><![CDATA[0]]></cloudCount>
+                      </record>
+                    </data>
+                  </block>
+                </column>
+              </columns>
+            </arealayout>
+          </block>
+          <block type="horizontal_rule" name="">
+            <style>
+              <backgroundRepeat>no-repeat</backgroundRepeat>
+              <customClass>space-s</customClass>
+            </style>
+          </block>
+          <block type="page_attribute_display" name="">
+            <data table="btPageAttributeDisplay">
+              <record>
+                <attributeHandle><![CDATA[thumbnail]]></attributeHandle>
+                <attributeTitleText><![CDATA[]]></attributeTitleText>
+                <displayTag><![CDATA[p]]></displayTag>
+                <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                <thumbnailHeight><![CDATA[900]]></thumbnailHeight>
+                <thumbnailWidth><![CDATA[900]]></thumbnailWidth>
+              </record>
+            </data>
+          </block>
+          <block type="horizontal_rule" name="">
+            <style>
+              <backgroundRepeat>no-repeat</backgroundRepeat>
+              <customClass>space-s</customClass>
+            </style>
+          </block>
+          <block type="core_page_type_composer_control_output" name="" mc-block-id="aD3oPTvi">
+            <control output-control-id="8KJMuI7O"/>
+          </block>
+        </blocks>
+      </area>
+    </page>
+    <page name="What a frame !" path="/blog/what-a-frame" filename="" pagetype="blog_entry" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
+      <attributes>
         <attributekey handle="tags">
           <value>
             <option>Writing</option>
             <option>Story</option>
           </value>
         </attributekey>
-        <attributekey handle="exclude_sitemapxml">
-          <value><![CDATA[0]]></value>
+        <attributekey handle="thumbnail">
+          <value>
+            <fID>{ccm:export:file:forest.jpg}</fID>
+          </value>
+        </attributekey>
+      </attributes>
+      <area name="Popup">
+        <blocks>
+          <block type="page_title" name="" custom-template="byline.php">
+              <data table="btPageTitle">
+                  <record>
+                      <useCustomTitle><![CDATA[0]]></useCustomTitle>
+                      <titleText><![CDATA[[Page Title]]]></titleText>
+                  </record>
+              </data>
+          </block>
+          <block type="tags" name="">
+            <data table="btTags">
+              <record>
+                <title><![CDATA[]]></title>
+                <targetCID>{ccm:export:page:/home}</targetCID>
+                <displayMode><![CDATA[page]]></displayMode>
+                <cloudCount><![CDATA[0]]></cloudCount>
+              </record>
+            </data>
+          </block>
+          <block type="horizontal_rule" name="">
+          </block>
+        <block type="core_area_layout" name="" custom-template="two_nogap.php">
+          <style>
+            <backgroundImage>{ccm:export:file:1366-500.png}</backgroundImage>
+            <backgroundRepeat>no-repeat</backgroundRepeat>
+            <customClass>left-primary</customClass>
+          </style>
+          <arealayout type="theme-grid" columns="12">
+            <columns>
+              <column span="6" offset="0">
+                <block type="page_attribute_display" name="">
+                  <data table="btPageAttributeDisplay">
+                    <record>
+                      <attributeHandle><![CDATA[rpv_pageDescription]]></attributeHandle>
+                      <attributeTitleText><![CDATA[]]></attributeTitleText>
+                      <displayTag><![CDATA[p]]></displayTag>
+                      <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                      <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                      <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
+                    </record>
+                  </data>
+                </block>
+              </column>
+              <column span="5" offset="1">
+                <block type="page_attribute_display" name="">
+                  <data table="btPageAttributeDisplay">
+                    <record>
+                      <attributeHandle><![CDATA[thumbnail]]></attributeHandle>
+                      <attributeTitleText><![CDATA[]]></attributeTitleText>
+                      <displayTag><![CDATA[p]]></displayTag>
+                      <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                      <thumbnailHeight><![CDATA[400]]></thumbnailHeight>
+                      <thumbnailWidth><![CDATA[400]]></thumbnailWidth>
+                    </record>
+                  </data>
+                </block>
+              </column>
+            </columns>
+          </arealayout>
+        </block>
+        <block type="horizontal_rule" name="">
+          <style>
+            <backgroundRepeat>no-repeat</backgroundRepeat>
+            <customClass>space-s</customClass>
+          </style>
+        </block>
+        <block type="core_page_type_composer_control_output" name="" mc-block-id="aD3oPTvi">
+          <control output-control-id="8KJMuI7O"/>
+        </block>
+        </blocks>
+      </area>
+    </page>
+    <page name="Blog me !" path="/blog/blog-me" filename="" pagetype="blog_entry" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
+      <attributes>
+        <attributekey handle="tags">
+          <value>
+            <option>Writing</option>
+            <option>Story</option>
+          </value>
         </attributekey>
         <attributekey handle="thumbnail">
           <value>
@@ -533,18 +1017,74 @@
       </attributes>
       <area name="Popup">
         <blocks>
-          <block mc-block-id="peb738Jt"/>
-          <block mc-block-id="9cQBzshf"/>
-          <block type="horizontal_rule" name=""/>
-          <block mc-block-id="2iPGKPGX"/>
-          <block mc-block-id="5Pw7AOQi"/>
-          <block type="content" name="">
-            <data table="btContentLocal">
+          <block type="page_title" name="" custom-template="byline.php">
+              <data table="btPageTitle">
+                  <record>
+                      <useCustomTitle><![CDATA[0]]></useCustomTitle>
+                      <titleText><![CDATA[[Page Title]]]></titleText>
+                  </record>
+              </data>
+          </block>
+          <block type="tags" name="">
+            <data table="btTags">
               <record>
-                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span></p><blockquote><span class="redactor-invisible-space"> Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. </span></span></blockquote><p><span class="redactor-invisible-space"><span class="redactor-invisible-space">Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space"></span></span></span></span></span></span></span></span></p>]]></content>
+                <title><![CDATA[]]></title>
+                <targetCID>{ccm:export:page:/home}</targetCID>
+                <displayMode><![CDATA[page]]></displayMode>
+                <cloudCount><![CDATA[0]]></cloudCount>
               </record>
             </data>
           </block>
+          <block type="horizontal_rule" name="">
+          </block>
+        <block type="core_area_layout" name="" custom-template="two_nogap.php">
+          <style>
+            <backgroundImage>{ccm:export:file:1366-500.png}</backgroundImage>
+            <backgroundRepeat>no-repeat</backgroundRepeat>
+            <customClass>left-primary</customClass>
+          </style>
+          <arealayout type="theme-grid" columns="12">
+            <columns>
+              <column span="6" offset="0">
+                <block type="page_attribute_display" name="">
+                  <data table="btPageAttributeDisplay">
+                    <record>
+                      <attributeHandle><![CDATA[rpv_pageDescription]]></attributeHandle>
+                      <attributeTitleText><![CDATA[]]></attributeTitleText>
+                      <displayTag><![CDATA[p]]></displayTag>
+                      <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                      <thumbnailHeight><![CDATA[250]]></thumbnailHeight>
+                      <thumbnailWidth><![CDATA[250]]></thumbnailWidth>
+                    </record>
+                  </data>
+                </block>
+              </column>
+              <column span="5" offset="1">
+                <block type="page_attribute_display" name="">
+                  <data table="btPageAttributeDisplay">
+                    <record>
+                      <attributeHandle><![CDATA[thumbnail]]></attributeHandle>
+                      <attributeTitleText><![CDATA[]]></attributeTitleText>
+                      <displayTag><![CDATA[p]]></displayTag>
+                      <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                      <thumbnailHeight><![CDATA[400]]></thumbnailHeight>
+                      <thumbnailWidth><![CDATA[400]]></thumbnailWidth>
+                    </record>
+                  </data>
+                </block>
+              </column>
+            </columns>
+          </arealayout>
+        </block>
+        <block type="horizontal_rule" name="">
+          <style>
+            <backgroundRepeat>no-repeat</backgroundRepeat>
+            <customClass>space-s</customClass>
+          </style>
+        </block>
+        <block type="core_page_type_composer_control_output" name="" mc-block-id="aD3oPTvi">
+          <control output-control-id="8KJMuI7O"/>
+        </block>
         </blocks>
       </area>
     </page>
@@ -585,47 +1125,6 @@
             <data table="btContentLocal">
               <record>
                 <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span></p><blockquote><span class="redactor-invisible-space"> Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. </span></span></blockquote><p><span class="redactor-invisible-space"><span class="redactor-invisible-space">Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space"></span></span></span></span></span></span></span></span></p>]]></content>
-              </record>
-            </data>
-          </block>
-        </blocks>
-      </area>
-    </page>
-    <page name="Let me try !" path="/work/sublime-2" filename="" pagetype="work" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
-      <attributes>
-        <attributekey handle="tags">
-          <value>
-            <option>Colored</option>
-          </value>
-        </attributekey>
-        <attributekey handle="thumbnail">
-          <value>
-            <fID>{ccm:export:file:mountains.jpg}</fID>
-          </value>
-        </attributekey>
-      </attributes>
-      <area name="Popup">
-        <blocks>
-          <block mc-block-id="3fUmDc6S"/>
-          <block mc-block-id="1y6viAjF"/>
-          <block mc-block-id="aC03gs0i"/>
-          <block type="page_attribute_display" name="">
-            <data table="btPageAttributeDisplay">
-              <record>
-                <attributeHandle><![CDATA[thumbnail]]></attributeHandle>
-                <attributeTitleText><![CDATA[]]></attributeTitleText>
-                <displayTag><![CDATA[p]]></displayTag>
-                <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
-                <thumbnailHeight><![CDATA[900]]></thumbnailHeight>
-                <thumbnailWidth><![CDATA[900]]></thumbnailWidth>
-              </record>
-            </data>
-          </block>
-          <block mc-block-id="sPUXYJ3g"/>
-          <block type="content" name="">
-            <data table="btContentLocal">
-              <record>
-                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space"></span></span></span></span></p>]]></content>
               </record>
             </data>
           </block>
