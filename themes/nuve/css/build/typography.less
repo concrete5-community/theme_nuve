@@ -1,26 +1,10 @@
-html {font-size: 1em;}
-
 body {
-  background-color: white;
-  font-family: 'Roboto', serif;
-  font-weight: 400;
-  line-height: 1.45;
-  color: #333;
+  color:	@body-text-color;
+  font-family: @body-type-font-family;
+  font-weight: @body-type-font-weight;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
 }
-
-p {margin-bottom: 1.3em;}
-
-h1, h2, h3, h4 {
-  margin: 0 0 0.5em;
-  font-weight: inherit;
-  line-height: 1.2;
-}
-h5 {
-  margin: 0 0 1em;
-}
-
-
-small, .font_small {font-size: 0.707em;}
 
 h1 {.make-heading(@h1-type-font-family, @h1-type-font-size, @h1-type-font-weight, @h1-type-color);}
 h2 {.make-heading(@h2-type-font-family, @h2-type-font-size, @h2-type-font-weight, @h2-type-color);}
@@ -34,7 +18,6 @@ h6 {.make-heading(@h6-type-font-family, @h6-type-font-size, @h6-type-font-weight
   font-family: @family;
   font-size: @size;
   font-weight: @weight;
-  // color: @color;
   line-height: @line-height-base;
   text-transform: @transform;
 }

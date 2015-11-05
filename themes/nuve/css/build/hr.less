@@ -13,19 +13,8 @@ hr {
     background-color: @grey-color;
     clear: both;
 
-    &.primary{ background: @primary-color }
-    &.secondary { background: @secondary-color }
-    &.tertiary { background: @tertiary-color }
-    &.quaternary { background: @quaternary-color }
-
-    // Pour ceux qui sont dans des boxes coloré, on prend sont contraste
-    .primary & { background: @primary-text-color }
-    .secondary & { background: @secondary-text-color }
-    .tertiary & { background: @tertiary-text-color }
-    .quaternary & { background: @quaternary-text-color }
-
     &.thin, .thin & {
-        background: darken(@tertiary-color,5%);
+        background: @light-color;
         height:1px;
     }
     &.dotted, .dotted & {
@@ -44,16 +33,5 @@ hr {
     &.space-l, .space-l & { height: @space-l }
     &.space-xl, .space-xl & { height: @space-xl }
   }
-// HR under elements
-.hr-bold {
-    padding-bottom: 25px;
-    margin-bottom: 24px;
-    border-bottom: 5px solid @quaternary-color;
-}
 
-// Element under Content block
-#horizontalrule {
-    height: 1px;
-    margin: (@space-l / 4) auto (@space-l / 4)-1 auto;  // 79px height
-}
 h1+hr,h2+hr,h3+hr,h4+hr,h5+hr,h6+hr {margin-top: 0!important; height: 1px;}

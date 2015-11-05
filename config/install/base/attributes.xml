@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <concrete5-cif version="1.0">
     <attributekeys>
-      <attributekey handle="thumbnail" name="Thumbnail" package="theme_nuve" searchable="1" indexed="1" type="image_file" category="collection"/>      
-      <attributekey handle="number_of_main_areas" name="Number of main areas" package="theme_nuve" searchable="0" indexed="1"
+      <attributekey handle="thumbnail" name="Thumbnail" package="theme_nuve" searchable="1" indexed="1" type="image_file" category="collection"/>
+      <attributekey handle="number_of_main_areas" name="Number of Sections" package="theme_nuve" searchable="0" indexed="1"
                     type="select" category="collection">
           <type allow-multiple-values="0" display-order="display_asc" allow-other-values="0">
               <options>
@@ -31,12 +31,71 @@
           </type>
       </attributekey>
       <attributekey handle="hijacking" name="Auto Scroll" package="theme_nuve" type="boolean" category="collection"><type checked="1"/></attributekey>
+      <attributekey handle="primary_color" name="Primary color" package="theme_nuve" searchable="0" indexed="1"
+                    type="select" category="collection">
+          <type allow-multiple-values="0" display-order="display_asc" allow-other-values="0">
+              <options>
+                  <option value="red" is-end-user-added="0"/>
+                  <option value="pink" is-end-user-added="0"/>
+                  <option value="purple" is-end-user-added="0"/>
+                  <option value="deep_purple" is-end-user-added="0"/>
+                  <option value="indigo" is-end-user-added="0"/>
+                  <option value="blue" is-end-user-added="0"/>
+                  <option value="light_blue" is-end-user-added="0"/>
+                  <option value="cyan" is-end-user-added="0"/>
+                  <option value="teal" is-end-user-added="0"/>
+                  <option value="green" is-end-user-added="0"/>
+                  <option value="light_green" is-end-user-added="0"/>
+                  <option value="lime" is-end-user-added="0"/>
+                  <option value="yellow" is-end-user-added="0"/>
+                  <option value="amber" is-end-user-added="0"/>
+                  <option value="orange" is-end-user-added="0"/>
+                  <option value="deep_orange" is-end-user-added="0"/>
+                  <option value="brown" is-end-user-added="0"/>
+                  <option value="grey" is-end-user-added="0"/>
+                  <option value="blue_grey" is-end-user-added="0"/>
+                  <option value="black" is-end-user-added="0"/>
+                  <option value="white" is-end-user-added="0"/>
+              </options>
+          </type>
+      </attributekey>
+      <attributekey handle="accent_color" name="Accent color" package="theme_nuve" searchable="0" indexed="1"
+                    type="select" category="collection">
+          <type allow-multiple-values="0" display-order="display_asc" allow-other-values="0">
+              <options>
+                  <option value="red" is-end-user-added="0"/>
+                  <option value="pink" is-end-user-added="0"/>
+                  <option value="purple" is-end-user-added="0"/>
+                  <option value="deep_purple" is-end-user-added="0"/>
+                  <option value="indigo" is-end-user-added="0"/>
+                  <option value="blue" is-end-user-added="0"/>
+                  <option value="light_blue" is-end-user-added="0"/>
+                  <option value="cyan" is-end-user-added="0"/>
+                  <option value="teal" is-end-user-added="0"/>
+                  <option value="green" is-end-user-added="0"/>
+                  <option value="light_green" is-end-user-added="0"/>
+                  <option value="lime" is-end-user-added="0"/>
+                  <option value="yellow" is-end-user-added="0"/>
+                  <option value="amber" is-end-user-added="0"/>
+                  <option value="orange" is-end-user-added="0"/>
+                  <option value="deep_orange" is-end-user-added="0"/>
+                  <option value="brown" is-end-user-added="0"/>
+                  <option value="grey" is-end-user-added="0"/>
+                  <option value="blue_grey" is-end-user-added="0"/>
+                  <option value="black" is-end-user-added="0"/>
+                  <option value="white" is-end-user-added="0"/>
+              </options>
+          </type>
+      </attributekey>
       </attributekeys>
     <attributesets>
         <attributeset handle="theme_nuve" name="Theme Nuve" package="theme_nuve" locked="0" category="collection">
+            <attributekey handle="thumbnail"/>
             <attributekey handle="number_of_main_areas"/>
             <attributekey handle="scroll_transition"/>
             <attributekey handle="hijacking"/>
+            <attributekey handle="primary_color"/>
+            <attributekey handle="accent_color"/>
         </attributeset>
     </attributesets>
 </concrete5-cif>

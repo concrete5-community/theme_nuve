@@ -5,12 +5,11 @@
       <pagetemplates type="custom" default="popup_content">
         <pagetemplate handle="popup_content"/>
       </pagetemplates>
-      <target handle="all" package=""/>
+      <target handle="parent_page" package="" path="/portfolio"/>
       <composer>
         <formlayout>
           <set name="Basics" description="">
             <control custom-template="" required="1" custom-label="" description="" type="core_page_property" handle="name"/>
-            <control custom-template="" custom-label="" description="" type="core_page_property" handle="publish_target"/>
             <control custom-template="" custom-label="" description="" type="core_page_property" handle="description"/>
             <control custom-template="" custom-label="" description="" type="collection_attribute" handle="tags"/>
             <control custom-template="" custom-label="" description="" type="collection_attribute" handle="thumbnail"/>

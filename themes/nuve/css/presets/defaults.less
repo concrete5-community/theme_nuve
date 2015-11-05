@@ -4,82 +4,52 @@
 
 
 // -- Global color -- \\
-
-
-@primary-color : 		#f24b4b;
-@secondary-color : 	#6bd6f1;
-@tertiary-color : 	#F7F2EF; // A light color // edf4f4
-@quaternary-color : 	#4F5659; // A darker color
-
 @white-color: 			#ffffff;
 @black-color : 			#1f2222;
 @grey-color : 			lighten(@black-color, 50%);
-@light-color : 			darken(@body-bg-color,2%);
+@light-color : 			lighten(@black-color, 80%);
 
-@primary-text-color :  	contrast(@primary-color, @black-color, @white-color,50%);
-@secondary-text-color : 	contrast(@secondary-color, @black-color, @white-color,50%);
-@tertiary-text-color : 	contrast(@tertiary-color, @black-color, @white-color,50%);
-@quaternary-text-color : 	contrast(@quaternary-color, @black-color, @white-color,50%);
+// -- Elements color -- \\
+@masonry-hover-color : 	#ccc;
+@card-smoke-color : 		#000;
 
-@primary-light-color : 		hsl(hue(@primary-color),saturation(@primary-color),95%);
-@secondary-light-color : 		hsl(hue(@secondary-color),saturation(@secondary-color),95%);
-@tertiary-light-color : 		hsl(hue(@tertiary-color),saturation(@tertiary-color),95%);
-@quaternary-light-color : 	hsl(hue(@quaternary-color),saturation(@quaternary-color),95%);
+// -- Typo -- \\
+@body-text-color: 				@black-color;
+@body-type-font-weight:   400;
+@body-type-font-family: 	~"'Roboto', Helvetica, Arial, sans-serif";
+@font-size-base: 					1.6rem;
+@line-height-base:        1.5;
+@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
-	@success-color:         #5cb85c;
-	@info-color:            #5bc0de;
-	@warning-color:         #f0ad4e;
-	@danger-color:          #d9534f;
+// --  Headings -- \\
+@h1-type-font-family: ~"'Roboto Slab', Helvetica, Arial, sans-serif";
+@h1-type-color: #1a1a1a;
+@h1-type-font-size: 3.998em;
+@h1-type-font-weight: 700;
 
-	@white-color : 								#fff;
-	@black-color : 								#999;
+@h2-type-font-family: ~"'Roboto Slab', Helvetica, Arial, sans-serif";
+@h2-type-color: #1a1a1a;
+@h2-type-font-size: 2.827em;
+@h2-type-font-weight: 700;
 
+@h3-type-font-family: ~"'Roboto Slab', Helvetica, Arial, sans-serif";
+@h3-type-color: #75ca2a;
+@h3-type-font-size: 1.999em;
+@h3-type-font-weight: 700;
 
-// -- Global Page -- \\
+@h4-type-font-family: ~"'Roboto Slab', Helvetica, Arial, sans-serif";
+@h4-type-color: #4f585c;
+@h4-type-font-size: 1.414em;
+@h4-type-font-weight: 700;
 
-	// Page
-	@body-bg-color:               #fff;
-	@body-text-color: 						@black-color;
-	@body-bg-pattern-image:       "../images/pattern/noise.png";
-	@content-bg-color: 			#fff;
+@h5-type-font-family: ~"'Roboto Slab', Helvetica, Arial, sans-serif";
+@h5-type-color: #9fa9ad;
+@h5-type-font-size: 0.73em;
+@h5-type-font-weight: 700;
+@h5-type-text-transform: uppercase;
 
-
-	@font-size-base: 					1.6rem;
-	@line-height-base:        2;
-	@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
-
-	// Headings
-	@h1-type-font-family: ~"'Roboto Slab', Helvetica, Arial, sans-serif";
-	@h1-type-color: #1a1a1a;
-	@h1-type-font-size: 3.998em;
-	@h1-type-font-weight: 700;
-
-	@h2-type-font-family: ~"'Roboto Slab', Helvetica, Arial, sans-serif";
-	@h2-type-color: #1a1a1a;
-	@h2-type-font-size: 2.827em;
-	@h2-type-font-weight: 700;
-
-	@h3-type-font-family: ~"'Roboto Slab', Helvetica, Arial, sans-serif";
-	@h3-type-color: #75ca2a;
-	@h3-type-font-size: 1.999em;
-	@h3-type-font-weight: 700;
-
-	@h4-type-font-family: ~"'Roboto Slab', Helvetica, Arial, sans-serif";
-	@h4-type-color: #4f585c;
-	@h4-type-font-size: 1.414em;
-	@h4-type-font-weight: 700;
-
-	@h5-type-font-family: ~"'Roboto Slab', Helvetica, Arial, sans-serif";
-	@h5-type-color: #9fa9ad;
-	@h5-type-font-size: 0.73em;
-	@h5-type-font-weight: 700;
-	@h5-type-text-transform: uppercase;
-
-	@h6-type-font-family: ~"'Roboto Slab', Helvetica, Arial, sans-serif";
-	@h6-type-color: #a3db75;
-	@h6-type-font-size: 0.73em;
-	@h6-type-font-weight: 400;
-	@h6-type-text-transform: uppercase;
-
-// -- Ease -- \\
-	 @ease-speed: cubic-bezier(.89,.05,.09,.99);
+@h6-type-font-family: ~"'Roboto Slab', Helvetica, Arial, sans-serif";
+@h6-type-color: #a3db75;
+@h6-type-font-size: 0.73em;
+@h6-type-font-weight: 400;
+@h6-type-text-transform: uppercase;

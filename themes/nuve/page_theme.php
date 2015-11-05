@@ -26,7 +26,6 @@ class PageTheme extends \Concrete\Core\Page\Theme\Theme  {
 				$this->requireAsset('javascript', 'nuve');
 
         $this->requireAsset('css', 'font-awesome');
-				$this->requireAsset('css', 'reset');
 				$this->requireAsset('css', 'bootstrap-custom');
 				$this->requireAsset('css', 'animate');
 				$this->requireAsset('css', 'nuve-style');

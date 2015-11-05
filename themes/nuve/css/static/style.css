@@ -56,7 +56,7 @@ body.edit-mode .cd-section > div {
   -o-transform:none !important;
   transform:none !important;
 }
-.cd-section .cd-section-style {
+.cd-section .cd-section-style, .cd-section .vertical-align {
   height: 100vh;
   background-size: cover;
 }

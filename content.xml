@@ -1,0 +1,636 @@
+<?xml version="1.0"?>
+<concrete5-cif version="1.0">
+  <attributekeys>
+    <attributekey handle="tags" name="Tags" package="" searchable="1" indexed="1" type="select" category="collection">
+      <type allow-multiple-values="1" display-order="display_asc" allow-other-values="1">
+        <options>
+          <option value="Design" is-end-user-added="1"/>
+          <option value="One page" is-end-user-added="1"/>
+          <option value="Colored" is-end-user-added="1"/>
+          <option value="Print" is-end-user-added="1"/>
+          <option value="Writing" is-end-user-added="1"/>
+          <option value="Story" is-end-user-added="1"/>
+        </options>
+      </type>
+    </attributekey>
+  </attributekeys>
+  <pages>
+    <page name="Home" path="" filename="" pagetype="" template="full" user="admin" description="" package="">
+      <attributes>
+        <attributekey handle="number_of_main_areas">
+          <value>
+            <option>4</option>
+          </value>
+        </attributekey>
+        <attributekey handle="scroll_transition">
+          <value>
+            <option>parallax</option>
+          </value>
+        </attributekey>
+        <attributekey handle="hijacking">
+          <value><![CDATA[1]]></value>
+        </attributekey>
+      </attributes>
+      <area name="Main">
+        <style>
+          <backgroundColor>rgb(220, 30, 90)</backgroundColor>
+          <backgroundImage>{ccm:export:file:piano.jpg}</backgroundImage>
+          <backgroundRepeat>no-repeat</backgroundRepeat>
+          <alignment>center</alignment>
+          <textColor>rgb(255, 255, 255)</textColor>
+          <linkColor>rgb(178, 178, 178)</linkColor>
+        </style>
+        <blocks>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<h1><concrete-picture id="image-marker" alt="" file="logo-190-white.png" />&nbsp;&nbsp;Hello, I'm Nuve<br></h1><h4>A <em>perfectly</em> crafted theme <br>to create Awesome One page website.</h4>]]></content>
+              </record>
+            </data>
+          </block>
+        </blocks>
+      </area>
+      <area name="Main - 1">
+        <style>
+          <backgroundColor>rgb(56, 222, 222)</backgroundColor>
+          <backgroundRepeat>no-repeat</backgroundRepeat>
+        </style>
+        <blocks>
+          <block type="core_area_layout" name="">
+            <arealayout type="theme-grid" columns="12">
+              <columns>
+                <column span="5" offset="0">
+                  <block type="content" name="">
+                    <data table="btContentLocal">
+                      <record>
+                        <content><![CDATA[<h1 style="text-align: right;">Portfolio</h1><h4 style="text-align: right;">Use masonry to build grid portfolio <br>from blog or work.</h4><p style="text-align: right;">The masonry page-list template let you <br>to create awesome portfolio or blog. <br>Manage number of columns, margins or not. <br>Support sorting with tags and searching with key word ! </p><h5 style="text-align: right;">Unbelievable to put your work on the top  </h5>]]></content>
+                      </record>
+                    </data>
+                  </block>
+                </column>
+                <column span="7" offset="0">
+                  <block type="page_list" name="" custom-template="nuve_masonry.php">
+                    <style>
+                      <backgroundRepeat>no-repeat</backgroundRepeat>
+                      <customClass>no-gap tag-sorting 2-column</customClass>
+                    </style>
+                    <data table="btPageList">
+                      <record>
+                        <num><![CDATA[0]]></num>
+                        <orderBy><![CDATA[display_asc]]></orderBy>
+                        <cParentID>{ccm:export:page:/work}</cParentID>
+                        <cThis><![CDATA[0]]></cThis>
+                        <useButtonForLink><![CDATA[0]]></useButtonForLink>
+                        <buttonLinkText><![CDATA[]]></buttonLinkText>
+                        <pageListTitle><![CDATA[]]></pageListTitle>
+                        <filterByRelated><![CDATA[0]]></filterByRelated>
+                        <filterByCustomTopic><![CDATA[0]]></filterByCustomTopic>
+                        <filterDateOption><![CDATA[]]></filterDateOption>
+                        <filterDateDays><![CDATA[0]]></filterDateDays>
+                        <filterDateStart><![CDATA[]]></filterDateStart>
+                        <filterDateEnd><![CDATA[]]></filterDateEnd>
+                        <relatedTopicAttributeKeyHandle><![CDATA[]]></relatedTopicAttributeKeyHandle>
+                        <customTopicAttributeKeyHandle><![CDATA[]]></customTopicAttributeKeyHandle>
+                        <customTopicTreeNodeID><![CDATA[0]]></customTopicTreeNodeID>
+                        <includeName><![CDATA[1]]></includeName>
+                        <includeDescription><![CDATA[1]]></includeDescription>
+                        <includeDate><![CDATA[0]]></includeDate>
+                        <includeAllDescendents><![CDATA[0]]></includeAllDescendents>
+                        <paginate><![CDATA[0]]></paginate>
+                        <displayAliases><![CDATA[0]]></displayAliases>
+                        <enableExternalFiltering><![CDATA[0]]></enableExternalFiltering>
+                        <ptID>{ccm:export:pagetype:work}</ptID>
+                        <truncateSummaries><![CDATA[0]]></truncateSummaries>
+                        <displayFeaturedOnly><![CDATA[0]]></displayFeaturedOnly>
+                        <noResultsMessage><![CDATA[]]></noResultsMessage>
+                        <displayThumbnail><![CDATA[1]]></displayThumbnail>
+                        <truncateChars><![CDATA[0]]></truncateChars>
+                      </record>
+                    </data>
+                  </block>
+                </column>
+              </columns>
+            </arealayout>
+          </block>
+        </blocks>
+      </area>
+      <area name="Main - 2">
+        <style>
+          <backgroundColor>rgb(233, 30, 99)</backgroundColor>
+          <backgroundRepeat>no-repeat</backgroundRepeat>
+          <textColor>rgb(255, 255, 255)</textColor>
+        </style>
+        <blocks>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<h1 style="text-align: center;">Features</h1>]]></content>
+              </record>
+            </data>
+          </block>
+          <block type="core_area_layout" name="">
+            <arealayout type="theme-grid" columns="12">
+              <columns>
+                <column span="4" offset="0">
+                  <block type="feature" name="">
+                    <style>
+                      <backgroundRepeat>no-repeat</backgroundRepeat>
+                      <customClass>wow bounceInUp</customClass>
+                    </style>
+                    <data table="btFeature">
+                      <record>
+                        <icon><![CDATA[image]]></icon>
+                        <title><![CDATA[Full page background]]></title>
+                        <paragraph><![CDATA[<p>Choose a color or a image from file-manager to use as section background</p>]]></paragraph>
+                        <externalLink><![CDATA[]]></externalLink>
+                      </record>
+                    </data>
+                  </block>
+                  <block type="feature" name="">
+                    <data table="btFeature">
+                      <record>
+                        <icon><![CDATA[google]]></icon>
+                        <title><![CDATA[Google fonts]]></title>
+                        <paragraph><![CDATA[<p>Nuve support Google fonts, Choose from numerous theme preset to fit with your need.</p>]]></paragraph>
+                        <externalLink><![CDATA[]]></externalLink>
+                      </record>
+                    </data>
+                  </block>
+                  <block type="feature" name="">
+                    <data table="btFeature">
+                      <record>
+                        <icon><![CDATA[edit]]></icon>
+                        <title><![CDATA[Material Design Lite]]></title>
+                        <paragraph><![CDATA[<p>Nuve is using The awesome <a href="http://www.getmdl.io/" target="_blank">Google Material Lite</a> as UI design. Add buttons, tables, ..</p>]]></paragraph>
+                        <externalLink><![CDATA[]]></externalLink>
+                      </record>
+                    </data>
+                  </block>
+                </column>
+                <column span="4" offset="0">
+                  <block type="feature" name="">
+                    <data table="btFeature">
+                      <record>
+                        <icon><![CDATA[html5]]></icon>
+                        <title><![CDATA[HTML5 & Bootstrap 3]]></title>
+                        <paragraph><![CDATA[<p>The scaffolding of the theme is pretty strong and modern. </p>]]></paragraph>
+                        <externalLink><![CDATA[]]></externalLink>
+                      </record>
+                    </data>
+                  </block>
+                  <block type="feature" name="">
+                    <data table="btFeature">
+                      <record>
+                        <icon><![CDATA[arrows-h]]></icon>
+                        <title><![CDATA[Pretty responsive]]></title>
+                        <paragraph><![CDATA[<p>Nuve is pretty <strong>responsive</strong>. The scroll effect is disabled on small screen where it is not useful.</p>]]></paragraph>
+                        <externalLink><![CDATA[]]></externalLink>
+                      </record>
+                    </data>
+                  </block>
+                </column>
+                <column span="4" offset="0">
+                  <block type="feature" name="">
+                    <data table="btFeature">
+                      <record>
+                        <icon><![CDATA[sort]]></icon>
+                        <title><![CDATA[Page list tags sorting]]></title>
+                        <paragraph><![CDATA[<p>Nuve display you work is a beautiful way, as your work, with tags sorting and Keyword searching.</p>]]></paragraph>
+                        <externalLink><![CDATA[]]></externalLink>
+                      </record>
+                    </data>
+                  </block>
+                  <block type="feature" name="">
+                    <data table="btFeature">
+                      <record>
+                        <icon><![CDATA[music]]></icon>
+                        <title><![CDATA[Scroll transitions]]></title>
+                        <paragraph><![CDATA[<p>Incredible effect on scroll let your user live a great experience.</p>]]></paragraph>
+                        <externalLink><![CDATA[]]></externalLink>
+                      </record>
+                    </data>
+                  </block>
+                </column>
+              </columns>
+            </arealayout>
+          </block>
+        </blocks>
+      </area>
+      <area name="Main - 3">
+        <style>
+          <backgroundColor>rgb(85, 171, 168)</backgroundColor>
+          <backgroundRepeat>no-repeat</backgroundRepeat>
+        </style>
+        <blocks>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<h1>The last blog entries</h1>]]></content>
+              </record>
+            </data>
+          </block>
+          <block type="page_list" name="" custom-template="nuve_cards.php">
+            <data table="btPageList">
+              <record>
+                <num><![CDATA[0]]></num>
+                <orderBy><![CDATA[display_asc]]></orderBy>
+                <cParentID>{ccm:export:page:/blog}</cParentID>
+                <cThis><![CDATA[0]]></cThis>
+                <useButtonForLink><![CDATA[1]]></useButtonForLink>
+                <buttonLinkText><![CDATA[Read blog]]></buttonLinkText>
+                <pageListTitle><![CDATA[]]></pageListTitle>
+                <filterByRelated><![CDATA[0]]></filterByRelated>
+                <filterByCustomTopic><![CDATA[0]]></filterByCustomTopic>
+                <filterDateOption><![CDATA[]]></filterDateOption>
+                <filterDateDays><![CDATA[0]]></filterDateDays>
+                <filterDateStart><![CDATA[]]></filterDateStart>
+                <filterDateEnd><![CDATA[]]></filterDateEnd>
+                <relatedTopicAttributeKeyHandle><![CDATA[]]></relatedTopicAttributeKeyHandle>
+                <customTopicAttributeKeyHandle><![CDATA[]]></customTopicAttributeKeyHandle>
+                <customTopicTreeNodeID><![CDATA[0]]></customTopicTreeNodeID>
+                <includeName><![CDATA[1]]></includeName>
+                <includeDescription><![CDATA[1]]></includeDescription>
+                <includeDate><![CDATA[0]]></includeDate>
+                <includeAllDescendents><![CDATA[0]]></includeAllDescendents>
+                <paginate><![CDATA[0]]></paginate>
+                <displayAliases><![CDATA[0]]></displayAliases>
+                <enableExternalFiltering><![CDATA[0]]></enableExternalFiltering>
+                <ptID>{ccm:export:pagetype:blog_entry}</ptID>
+                <truncateSummaries><![CDATA[0]]></truncateSummaries>
+                <displayFeaturedOnly><![CDATA[0]]></displayFeaturedOnly>
+                <noResultsMessage><![CDATA[]]></noResultsMessage>
+                <displayThumbnail><![CDATA[1]]></displayThumbnail>
+                <truncateChars><![CDATA[0]]></truncateChars>
+              </record>
+            </data>
+          </block>
+        </blocks>
+      </area>
+      <area name="Main - 4">
+        <style>
+          <backgroundColor>rgb(96, 125, 139)</backgroundColor>
+          <backgroundRepeat>no-repeat</backgroundRepeat>
+          <textColor>rgb(255, 255, 255)</textColor>
+        </style>
+        <blocks>
+          <block type="core_area_layout" name="">
+            <arealayout type="theme-grid" columns="12">
+              <columns>
+                <column span="5" offset="0">
+                  <block type="image" name="">
+                    <data table="btContentImage">
+                      <record>
+                        <fID>{ccm:export:file:logo-190-white.png}</fID>
+                        <maxWidth><![CDATA[0]]></maxWidth>
+                        <maxHeight><![CDATA[0]]></maxHeight>
+                        <externalLink><![CDATA[]]></externalLink>
+                        <altText><![CDATA[]]></altText>
+                        <title><![CDATA[]]></title>
+                      </record>
+                    </data>
+                  </block>
+                </column>
+                <column span="7" offset="0">
+                  <block type="content" name="">
+                    <data table="btContentLocal">
+                      <record>
+                        <content><![CDATA[<h3>Make Nuve, YOURS !</h3><p>Nuve is completely customizable, you get all the power at your fingers. <br>Customize colors, backgrounds, Set the number of sections (slides), the scroll effect, activate the auto-scroll position, the number of columns in the page-list template, ..  </p><p><a href="#" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">  Buy Nuve  </a>  </p>]]></content>
+                      </record>
+                    </data>
+                  </block>
+                </column>
+              </columns>
+            </arealayout>
+          </block>
+        </blocks>
+      </area>
+      <area name="Main - 5"/>
+    </page>
+    <page name="Work" path="/work" filename="" pagetype="page" template="full" user="admin" description="" package="">
+      <attributes>
+        <attributekey handle="meta_title">
+          <value><![CDATA[]]></value>
+        </attributekey>
+        <attributekey handle="meta_description">
+          <value><![CDATA[]]></value>
+        </attributekey>
+        <attributekey handle="header_extra_content">
+          <value><![CDATA[]]></value>
+        </attributekey>
+        <attributekey handle="exclude_sitemapxml">
+          <value><![CDATA[0]]></value>
+        </attributekey>
+      </attributes>
+      <area name="Main">
+        <blocks>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[]]></content>
+              </record>
+            </data>
+          </block>
+        </blocks>
+      </area>
+      <area name="Main - 1"/>
+    </page>
+    <page name="Sublime !" path="/work/sublime" filename="" pagetype="work" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
+      <attributes>
+        <attributekey handle="tags">
+          <value>
+            <option>Print</option>
+          </value>
+        </attributekey>
+        <attributekey handle="thumbnail">
+          <value>
+            <fID>{ccm:export:file:plymouth.jpg}</fID>
+          </value>
+        </attributekey>
+      </attributes>
+      <area name="Popup">
+        <blocks>
+          <block mc-block-id="3fUmDc6S"/>
+          <block mc-block-id="1y6viAjF"/>
+          <block mc-block-id="aC03gs0i"/>
+          <block type="page_attribute_display" name="">
+            <data table="btPageAttributeDisplay">
+              <record>
+                <attributeHandle><![CDATA[thumbnail]]></attributeHandle>
+                <attributeTitleText><![CDATA[]]></attributeTitleText>
+                <displayTag><![CDATA[p]]></displayTag>
+                <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                <thumbnailHeight><![CDATA[900]]></thumbnailHeight>
+                <thumbnailWidth><![CDATA[900]]></thumbnailWidth>
+              </record>
+            </data>
+          </block>
+          <block mc-block-id="sPUXYJ3g"/>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space"></span></span></span></span></p>]]></content>
+              </record>
+            </data>
+          </block>
+        </blocks>
+      </area>
+    </page>
+    <page name="Blog" path="/blog" filename="" pagetype="page" template="full" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
+      <area name="Main">
+        <blocks>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[]]></content>
+              </record>
+            </data>
+          </block>
+        </blocks>
+      </area>
+    </page>
+    <page name="What a frame !" path="/blog/what-frame" filename="" pagetype="blog_entry" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
+      <attributes>
+        <attributekey handle="tags">
+          <value>
+            <option>Writing</option>
+            <option>Story</option>
+          </value>
+        </attributekey>
+        <attributekey handle="thumbnail">
+          <value>
+            <fID>0</fID>
+          </value>
+        </attributekey>
+      </attributes>
+      <area name="Popup">
+        <blocks>
+          <block mc-block-id="peb738Jt"/>
+          <block mc-block-id="9cQBzshf"/>
+          <block type="horizontal_rule" name=""/>
+          <block mc-block-id="2iPGKPGX"/>
+          <block mc-block-id="5Pw7AOQi"/>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span></p><blockquote><span class="redactor-invisible-space"> Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. </span></span></blockquote><p><span class="redactor-invisible-space"><span class="redactor-invisible-space">Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space"></span></span></span></span></span></span></span></span></p>]]></content>
+              </record>
+            </data>
+          </block>
+        </blocks>
+      </area>
+    </page>
+    <page name="Superb !" path="/work/superb" filename="" pagetype="work" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
+      <attributes>
+        <attributekey handle="meta_title">
+          <value><![CDATA[]]></value>
+        </attributekey>
+        <attributekey handle="meta_description">
+          <value><![CDATA[]]></value>
+        </attributekey>
+        <attributekey handle="header_extra_content">
+          <value><![CDATA[]]></value>
+        </attributekey>
+        <attributekey handle="tags">
+          <value>
+            <option>Design</option>
+            <option>Print</option>
+          </value>
+        </attributekey>
+        <attributekey handle="exclude_sitemapxml">
+          <value><![CDATA[0]]></value>
+        </attributekey>
+        <attributekey handle="thumbnail">
+          <value>
+            <fID>{ccm:export:file:cerf.jpg}</fID>
+          </value>
+        </attributekey>
+      </attributes>
+      <area name="Popup">
+        <blocks>
+          <block mc-block-id="3fUmDc6S"/>
+          <block mc-block-id="1y6viAjF"/>
+          <block mc-block-id="aC03gs0i"/>
+          <block mc-block-id="kaYcl25D"/>
+          <block mc-block-id="sPUXYJ3g"/>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space"></span></span></span></span></p>]]></content>
+              </record>
+            </data>
+          </block>
+        </blocks>
+      </area>
+    </page>
+    <page name="Awesome" path="/work/awesome" filename="" pagetype="work" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
+      <attributes>
+        <attributekey handle="meta_title">
+          <value><![CDATA[]]></value>
+        </attributekey>
+        <attributekey handle="meta_description">
+          <value><![CDATA[]]></value>
+        </attributekey>
+        <attributekey handle="header_extra_content">
+          <value><![CDATA[]]></value>
+        </attributekey>
+        <attributekey handle="tags">
+          <value>
+            <option>Design</option>
+            <option>Colored</option>
+          </value>
+        </attributekey>
+        <attributekey handle="exclude_sitemapxml">
+          <value><![CDATA[0]]></value>
+        </attributekey>
+        <attributekey handle="thumbnail">
+          <value>
+            <fID>{ccm:export:file:piano.jpg}</fID>
+          </value>
+        </attributekey>
+      </attributes>
+      <area name="Popup">
+        <blocks>
+          <block mc-block-id="3fUmDc6S"/>
+          <block mc-block-id="1y6viAjF"/>
+          <block mc-block-id="aC03gs0i"/>
+          <block mc-block-id="kaYcl25D"/>
+          <block mc-block-id="sPUXYJ3g"/>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space"></span></span></span></span></p>]]></content>
+              </record>
+            </data>
+          </block>
+        </blocks>
+      </area>
+    </page>
+    <page name="Blog me !" path="/blog/blog-me" filename="" pagetype="blog_entry" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
+      <attributes>
+        <attributekey handle="meta_title">
+          <value><![CDATA[]]></value>
+        </attributekey>
+        <attributekey handle="meta_description">
+          <value><![CDATA[]]></value>
+        </attributekey>
+        <attributekey handle="header_extra_content">
+          <value><![CDATA[]]></value>
+        </attributekey>
+        <attributekey handle="tags">
+          <value>
+            <option>Writing</option>
+            <option>Story</option>
+          </value>
+        </attributekey>
+        <attributekey handle="exclude_sitemapxml">
+          <value><![CDATA[0]]></value>
+        </attributekey>
+        <attributekey handle="thumbnail">
+          <value>
+            <fID>0</fID>
+          </value>
+        </attributekey>
+      </attributes>
+      <area name="Popup">
+        <blocks>
+          <block mc-block-id="peb738Jt"/>
+          <block mc-block-id="9cQBzshf"/>
+          <block type="horizontal_rule" name=""/>
+          <block mc-block-id="2iPGKPGX"/>
+          <block mc-block-id="5Pw7AOQi"/>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span></p><blockquote><span class="redactor-invisible-space"> Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. </span></span></blockquote><p><span class="redactor-invisible-space"><span class="redactor-invisible-space">Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space"></span></span></span></span></span></span></span></span></p>]]></content>
+              </record>
+            </data>
+          </block>
+        </blocks>
+      </area>
+    </page>
+    <page name="Open your mind" path="/blog/open-your-mind" filename="" pagetype="blog_entry" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
+      <attributes>
+        <attributekey handle="meta_title">
+          <value><![CDATA[]]></value>
+        </attributekey>
+        <attributekey handle="meta_description">
+          <value><![CDATA[]]></value>
+        </attributekey>
+        <attributekey handle="header_extra_content">
+          <value><![CDATA[]]></value>
+        </attributekey>
+        <attributekey handle="tags">
+          <value>
+            <option>Writing</option>
+            <option>Story</option>
+          </value>
+        </attributekey>
+        <attributekey handle="exclude_sitemapxml">
+          <value><![CDATA[0]]></value>
+        </attributekey>
+        <attributekey handle="thumbnail">
+          <value>
+            <fID>{ccm:export:file:typewritter.jpg}</fID>
+          </value>
+        </attributekey>
+      </attributes>
+      <area name="Popup">
+        <blocks>
+          <block mc-block-id="peb738Jt"/>
+          <block mc-block-id="9cQBzshf"/>
+          <block type="horizontal_rule" name=""/>
+          <block mc-block-id="2iPGKPGX"/>
+          <block mc-block-id="5Pw7AOQi"/>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span></p><blockquote><span class="redactor-invisible-space"> Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. </span></span></blockquote><p><span class="redactor-invisible-space"><span class="redactor-invisible-space">Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space"></span></span></span></span></span></span></span></span></p>]]></content>
+              </record>
+            </data>
+          </block>
+        </blocks>
+      </area>
+    </page>
+    <page name="Let me try !" path="/work/sublime-2" filename="" pagetype="work" template="popup_content" user="admin" description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." package="">
+      <attributes>
+        <attributekey handle="tags">
+          <value>
+            <option>Colored</option>
+          </value>
+        </attributekey>
+        <attributekey handle="thumbnail">
+          <value>
+            <fID>{ccm:export:file:mountains.jpg}</fID>
+          </value>
+        </attributekey>
+      </attributes>
+      <area name="Popup">
+        <blocks>
+          <block mc-block-id="3fUmDc6S"/>
+          <block mc-block-id="1y6viAjF"/>
+          <block mc-block-id="aC03gs0i"/>
+          <block type="page_attribute_display" name="">
+            <data table="btPageAttributeDisplay">
+              <record>
+                <attributeHandle><![CDATA[thumbnail]]></attributeHandle>
+                <attributeTitleText><![CDATA[]]></attributeTitleText>
+                <displayTag><![CDATA[p]]></displayTag>
+                <dateFormat><![CDATA[m/d/y h:i:a]]></dateFormat>
+                <thumbnailHeight><![CDATA[900]]></thumbnailHeight>
+                <thumbnailWidth><![CDATA[900]]></thumbnailWidth>
+              </record>
+            </data>
+          </block>
+          <block mc-block-id="sPUXYJ3g"/>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<span class="redactor-invisible-space"></span></span></span></span></p>]]></content>
+              </record>
+            </data>
+          </block>
+        </blocks>
+      </area>
+    </page>
+  </pages>
+</concrete5-cif>
