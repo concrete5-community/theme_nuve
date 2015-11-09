@@ -18,12 +18,13 @@ if ($number_of_areas > 0 ) {
         echo "<div class=\"cd-section-style\" style=\"$styleSet\">";
         echo "<div class=\"vertical-align\">";
         echo "<div>";
-	    $area->enableGridContainer();
-	    $area->display($c);
-      echo "</div>";
-      echo "</div>";
-      echo "</div>";
-	    echo "</section>";
+    	    $area->enableGridContainer();
+    	    $area->display($c);
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+  	    echo "</section>";
     }
 }
 
