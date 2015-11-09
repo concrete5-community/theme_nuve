@@ -117,6 +117,7 @@ jQuery(document).ready(function($){
 			animationVisible = animationParams[0],
 			animationTop = animationParams[1],
 			animationBottom = animationParams[2];
+			console.log(animationParams);
 
 		visibleSection.children('div').velocity(animationVisible, 1, function(){
 			visibleSection.css('opacity', 1);
@@ -145,7 +146,7 @@ jQuery(document).ready(function($){
     	typeof event !== 'undefined' && event.preventDefault();
 
     	var visibleSection = sectionsAvailable.filter('.visible'),
-    		middleScroll = ( hijacking == 'off' && $(window).scrollTop() != visibleSection.offset().top) ? true : false;
+    	middleScroll = ( hijacking == 'off' && $(window).scrollTop() != visibleSection.offset().top) ? true : false;
     	visibleSection = middleScroll ? visibleSection.next('.cd-section') : visibleSection;
 
     	var animationParams = selectAnimation(animationType, middleScroll, 'prev');
