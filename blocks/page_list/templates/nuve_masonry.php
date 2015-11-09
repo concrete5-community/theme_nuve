@@ -40,7 +40,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 		endif;
 
 		$title_text =  $th->entities($page->getCollectionName());
-		$title = $useButtonForLink ? "<a href=\"$url\" target=\"$target\">$title_text</a>" : $title_text;
+		$title = $useButtonForLink ? "<a href=\"$url\" target=\"$target\"" . ($page->isPopup ? 'class="open-popup-link"' : '') . ">$title_text</a>" : $title_text;
 		$tags = isset($tagsObject->pageTags[$page->getCollectionID()]) ? implode(' ',$tagsObject->pageTags[$page->getCollectionID()]) : '';
 
     $date = date('M / d / Y',strtotime($page->getCollectionDatePublic()));
@@ -61,12 +61,10 @@ defined('C5_EXECUTE') or die("Access Denied.");
       	$imageTag = $img->getTag();
       endif;
     endif;
-
-
 ?>
 <div class="<?php echo $column_class . intval(12 / $styleObject->columns)?> item masonry-item <?php echo $tags ?>">
 	<?php if (!$useButtonForLink): ?><a href="<?php echo $url ?>" target="<?php echo $target ?>" class="open-popup-link"><?php endif ?>
-	<?php if ($imageTag) : echo $imageTag;  endif ?>
+	<?php if ($imageTag) : echo $imageTag; else :?><img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 16 9'%2F%3E" width="640" height="360" class="placeholder" /><?php endif ?>
 	<?php if ($includeEntryText): ?>
 	<div class="info">
 		<div class="vertical-align">
@@ -78,7 +76,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 			<?php endif; ?>
 			<?php if ($includeName): ?><h4><?php echo $title ?></h4><?php endif ?>
 			<?php if ($includeDescription): ?><p><?php  echo $description ?></p><?php endif ?>
-			<?php if ($useButtonForLink): ?><a href="<?php echo $url?>" class="button-primary button-flat button-tiny"><?php echo $buttonLinkText?></a><?php endif ?>
+			<?php if ($useButtonForLink): ?><a href="<?php echo $url?>" class="button-primary button-flat button-tiny <?php echo $page->isPopup ? 'open-popup-link' : '' ?>"><?php echo $buttonLinkText?></a><?php endif ?>
 		</div>
 	</div>
 	<?php endif ?>
