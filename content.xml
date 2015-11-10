@@ -645,7 +645,7 @@
         </attributekey>
         <attributekey handle="thumbnail">
           <value>
-            <fID>{ccm:export:file:cerf.jpg}</fID>
+            <fID>{ccm:export:file:abstract.jpg}</fID>
           </value>
         </attributekey>
       </attributes>
