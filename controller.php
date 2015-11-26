@@ -15,7 +15,7 @@ class Controller extends \Concrete\Core\Package\Package {
 
 	protected $pkgHandle = 'theme_nuve';
 	protected $appVersionRequired = '5.7.5';
-	protected $pkgVersion = '0.2.6';
+	protected $pkgVersion = '0.2.8';
 	protected $pkgAllowsFullContentSwap = true;
 	protected $pkg;
 

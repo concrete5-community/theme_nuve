@@ -236,14 +236,14 @@
         </attributekey>
       </attributes>
       <area name="Main">
-        <style>
+        <!-- <style>
           <backgroundColor>rgb(220, 30, 90)</backgroundColor>
           <backgroundImage>{ccm:export:file:piano.jpg}</backgroundImage>
           <backgroundRepeat>no-repeat</backgroundRepeat>
           <alignment>center</alignment>
           <textColor>rgb(255, 255, 255)</textColor>
           <linkColor>rgb(178, 178, 178)</linkColor>
-        </style>
+        </style> -->
         <blocks>
           <block type="content" name="">
             <data table="btContentLocal">
@@ -255,10 +255,10 @@
         </blocks>
       </area>
       <area name="Main - 1">
-        <style>
+        <!-- <style>
           <backgroundColor>rgb(56, 222, 222)</backgroundColor>
           <backgroundRepeat>no-repeat</backgroundRepeat>
-        </style>
+        </style> -->
         <blocks>
           <block type="core_area_layout" name="">
             <arealayout type="theme-grid" columns="12">
@@ -319,12 +319,12 @@
         </blocks>
       </area>
       <area name="Main - 2">
-        <style>
+        <!-- <style>
           <backgroundColor>rgb(233, 30, 99)</backgroundColor>
           <backgroundRepeat>no-repeat</backgroundRepeat>
           <textColor>rgb(255, 255, 255)</textColor>
           <linkColor>rgb(178, 178, 178)</linkColor>
-        </style>
+        </style> -->
         <blocks>
           <block type="content" name="">
             <data table="btContentLocal">
@@ -422,10 +422,10 @@
         </blocks>
       </area>
       <area name="Main - 3">
-        <style>
+        <!-- <style>
           <backgroundColor>rgb(85, 171, 168)</backgroundColor>
           <backgroundRepeat>no-repeat</backgroundRepeat>
-        </style>
+        </style> -->
         <blocks>
           <block type="content" name="">
             <data table="btContentLocal">
@@ -472,11 +472,11 @@
         </blocks>
       </area>
       <area name="Main - 4">
-        <style>
+        <!-- <style>
           <backgroundColor>rgb(96, 125, 139)</backgroundColor>
           <backgroundRepeat>no-repeat</backgroundRepeat>
           <textColor>rgb(255, 255, 255)</textColor>
-        </style>
+        </style> -->
         <blocks>
           <block type="core_area_layout" name="">
             <arealayout type="theme-grid" columns="12">
