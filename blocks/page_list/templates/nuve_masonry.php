@@ -67,7 +67,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 	<?php if ($imageTag) : echo $imageTag; else :?><img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 16 9'%2F%3E" width="640" height="360" class="placeholder" /><?php endif ?>
 	<?php if ($includeEntryText): ?>
 	<div class="info">
-		<div class="vertical-align">
+		<div class="">
 			<?php if ($includeDate): ?>
 				<div class="meta">
 					<small><i class="fa fa-calendar-o"></i> <?php echo $date?></small>
@@ -81,34 +81,19 @@ defined('C5_EXECUTE') or die("Access Denied.");
 	</div>
 	<?php endif ?>
 	<?php if (!$useButtonForLink): ?></a><?php endif ?>
-	<?php if ($page->isPopup): ?>
-	<div class='white-popup mfp-hide large-popup' id="portfolio-popup-<?php echo $page->getCollectionID()?>">		<div class="popup-scroll">
-	<?php if (!$c->isEditMode()) :
-		Request::getInstance()->setCurrentPage($page);
-		echo $view->render("popup_content");
-		Request::getInstance()->setCurrentPage($c);
-	endif;
-	?></div></div>
-	<?php endif ?>
-	</div>
+</div> <!-- .masonry-item -->
 	<?php  endforeach; ?>
-
-    <?php  if (count($pages) == 0): ?>
-        <div class="ccm-block-page-list-no-pages"><?php  echo $noResultsMessage?></div>
-    <?php  endif;?>
-
-
-	<?php  if ($showRss): ?>
-		<div class="ccm-block-page-list-rss-icon">
-			<a href="<?php  echo $rssUrl ?>" target="_blank"><img src="<?php  echo $rssIconSrc ?>" width="14" height="14" alt="<?php  echo t('RSS Icon') ?>" title="<?php  echo t('RSS Feed') ?>" /></a>
-		</div>
-		<link href="<?php  echo BASE_URL.$rssUrl ?>" rel="alternate" type="application/rss+xml" title="<?php  echo $rssTitle; ?>" />
-	<?php  endif; ?>
-
 </div><!-- end .ccm-block-page-list -->
 
+<?php  if (count($pages) == 0): ?>
+		<div class="ccm-block-page-list-no-pages"><?php  echo $noResultsMessage?></div>
+<?php  endif;?>
 
-<?php  if ($showPagination): ?>
-    <?php  echo $pagination;?>
+
+<?php  if ($showRss): ?>
+<div class="ccm-block-page-list-rss-icon">
+	<a href="<?php  echo $rssUrl ?>" target="_blank"><img src="<?php  echo $rssIconSrc ?>" width="14" height="14" alt="<?php  echo t('RSS Icon') ?>" title="<?php  echo t('RSS Feed') ?>" /></a>
+</div>
+<link href="<?php  echo BASE_URL.$rssUrl ?>" rel="alternate" type="application/rss+xml" title="<?php  echo $rssTitle; ?>" />
 <?php  endif; ?>
 <?php  endif; ?>

@@ -4,9 +4,9 @@ jQuery(document).ready(function($){
 	var hijacking= $('body').data('hijacking'),
 		animationType = $('body').data('animation'),
 		delta = 0,
-        scrollThreshold = 5,
-        actual = 1,
-        animating = false;
+    scrollThreshold = 5,
+    actual = 1,
+    animating = false;
 
     //DOM elements
     var sectionsAvailable = $('.cd-section'),
@@ -117,15 +117,14 @@ jQuery(document).ready(function($){
 			animationVisible = animationParams[0],
 			animationTop = animationParams[1],
 			animationBottom = animationParams[2];
-			console.log(animationParams);
 
 		visibleSection.children('div').velocity(animationVisible, 1, function(){
 			visibleSection.css('opacity', 1);
-	    	topSection.css('opacity', 1);
-	    	bottomSection.css('opacity', 1);
+    	topSection.css('opacity', 1);
+    	bottomSection.css('opacity', 1);
 		});
-        topSection.children('div').velocity(animationTop, 0);
-        bottomSection.children('div').velocity(animationBottom, 0);
+    topSection.children('div').velocity(animationTop, 0);
+    bottomSection.children('div').velocity(animationBottom, 0);
 	}
 
 	function scrollHijacking (event) {
