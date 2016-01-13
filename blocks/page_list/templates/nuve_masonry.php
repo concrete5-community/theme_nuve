@@ -77,6 +77,15 @@ defined('C5_EXECUTE') or die("Access Denied.");
 			<?php if ($includeName): ?><h4><?php echo $title ?></h4><?php endif ?>
 			<?php if ($includeDescription): ?><p><?php  echo $description ?></p><?php endif ?>
 			<?php if ($useButtonForLink): ?><a href="<?php echo $url?>" class="button-primary button-flat button-tiny <?php echo $page->isPopup ? 'open-popup-link' : '' ?>"><?php echo $buttonLinkText?></a><?php endif ?>
+				<?php if ($page->isPopup): ?>
+				<div class='white-popup mfp-hide large-popup' id="portfolio-popup-<?php echo $page->getCollectionID()?>">		<div class="popup-scroll">
+				<?php if (!$c->isEditMode()) :
+					Request::getInstance()->setCurrentPage($page);
+					echo $view->render("popup_content");
+					Request::getInstance()->setCurrentPage($c);
+				endif;
+				?></div></div>
+				<?php endif ?>				
 		</div>
 	</div>
 	<?php endif ?>
