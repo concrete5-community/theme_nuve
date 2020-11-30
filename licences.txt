@@ -1,4 +1,0 @@
-
-This theme include these javascript librairies :
-
-Masonry : released under the MIT License.
